@@ -1,0 +1,57 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :introduction %><br />
+    <%= f.text_area :introduction %>
+  </div>
+  <div class="field">
+    <%= f.label :website %><br />
+    <%= f.text_field :website %>
+  </div>
+  <div class="field">
+    <%= f.label :follow_twitter %><br />
+    <%= f.text_field :follow_twitter %>
+  </div>
+  <div class="field">
+    <%= f.label :follow_linkedin %><br />
+    <%= f.text_field :follow_linkedin %>
+  </div>
+  <div class="field">
+    <%= f.label :follow_facebook %><br />
+    <%= f.text_field :follow_facebook %>
+  </div>
+  <div class="field">
+    <%= f.label :follow_stackoverflow %><br />
+    <%= f.text_field :follow_stackoverflow %>
+  </div>
+  <div class="field">
+    <%= f.label :follow_github %><br />
+    <%= f.text_field :follow_github %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br />
+    <%= f.check_box :status %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

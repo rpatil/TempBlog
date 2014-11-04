@@ -1,0 +1,67 @@
+<h1>Listing tutorials</h1>
+
+<table class="table table-hover">
+  <tr>
+    <th>Title</th>
+    <th>User</th>
+    <!--
+    <th>Mode</th>
+    <th>Time</th>
+    <th>Primary category</th>
+    <th>Categories</th>
+    <th>State</th>
+    <th>Publish date</th>
+    <th>tutorial_Type</th>
+    <th>Content introduction</th>
+    <th>Content main</th>
+    <th>Conclusion</th>
+    <th>Github link</th>
+    <th>Demo link</th>
+    <th>Related link</th>
+    <th>Attachment name</th>
+    <th>Attachment link</th>
+    <th>Video url</th>
+    <th>Vote up</th>
+    <th>Total view</th>
+    <th>Slug</th>
+    -->
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tutorials.each do |tutorial| %>
+  <tr>
+    <td><%= tutorial.title %></td>
+    <td><%= tutorial.user_id %></td>
+    <!--
+    <td><%= tutorial.mode %></td>
+    <td><%= tutorial.time %></td>
+    <td><%= tutorial.primary_category %></td>
+    <td><%= tutorial.categories %></td>
+    <td><%= tutorial.state %></td>
+    <td><%= tutorial.publish_date %></td>
+    <td><%= tutorial.tutorial_type %></td>
+    <td><%= tutorial.content_introduction %></td>
+    <td><%= tutorial.content_main %></td>
+    <td><%= tutorial.conclusion %></td>
+    <td><%= tutorial.github_link %></td>
+    <td><%= tutorial.demo_link %></td>
+    <td><%= tutorial.related_link %></td>
+    <td><%= tutorial.attachment_name %></td>
+    <td><%= tutorial.attachment_link %></td>
+    <td><%= tutorial.video_url %></td>
+    <td><%= tutorial.vote_up %></td>
+    <td><%= tutorial.total_view %></td>
+    <td><%= tutorial.slug %></td>
+    -->
+    <td><%= link_to 'Show', tutorial %></td>
+    <td><%= link_to 'Edit', edit_tutorial_path(tutorial) %></td>
+    <td><%= link_to 'Destroy', tutorial, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tutorial', new_tutorial_path %>

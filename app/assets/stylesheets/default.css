@@ -1,0 +1,217 @@
+
+/* List of Books Block */
+.green_line{
+  border: 1px solid green;
+}
+.red_line{
+  border: 1px solid red;
+}
+.black_line{
+  border: 1px solid black;
+}
+
+.select-mini {
+  font-size: 13px !important;
+  height: 30px !important;
+  width: 100px !important;
+  float: right;
+}
+.padding-left-right-zero {
+  padding-left: 0px !important;
+  padding-right: 0px !important;  
+}
+
+
+.sorting {
+  border-bottom: 4px solid #e5e5e5 !important;
+  /*margin-bottom: 10px !important;*/
+  padding-bottom: 10px !important;
+}
+.sorting .totalItems i {
+  padding-right: 7px !important;
+}
+#catListings .sorting .totalItems i {
+  color: #888888 !important;
+  margin-right: 5px !important;
+  border: 1px solid red !important;
+}
+#catListings .sorting .vfilters {
+  float: right !important;
+  border: 1px solid black !important;
+}
+#catListings .sorting .vlabel {
+  line-height: 34px !important;
+  margin-right: 15px !important;
+}
+#catListings .sorting select {
+  float: left !important;
+  width: 50px !important;
+  padding: 6px !important;
+  margin-right: 5px !important;
+}
+.form-control {
+  border-radius: 3px !important;
+}
+
+.thumbail_image{
+  min-height:160px !important;
+  width: 20%;
+  padding-left:0px;
+  padding-right:0px;
+  float: left;
+}
+h2.book_title {
+  font-size: 25px;
+  margin-top: 0px !important;
+  margin-bottom: 10px !important;
+}
+h2 a {
+  color: #333 !important;
+}
+.padding_left_right_ten{
+  padding-right: 10px !important;
+  padding-left: 10px !important;
+}
+
+.blog_description{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  min-height: 160px !important;
+  margin-right:10px !important;
+  border-right: 4px solid transparent;
+}
+.blog_description:hover {
+  /*border-right: 4px solid red;*/
+}
+
+.blog_other_details ul {
+  margin-bottom: 0px;
+  margin-left: 0;
+  padding-left: 0px !important;
+}
+
+.blog_other_details ul.available_format li {
+  margin-right: 0.5em; 
+}
+
+.blog_other_details ul li {
+  color: #949494;
+  display: inline-block;
+  line-height: 1.6;
+  list-style: none;
+  margin-right: 2em;
+  min-width: 2em;
+  list-position: inside;
+  margin-bottom: 10px;
+}
+.blog_short_description {
+  flex: 1 0 auto;
+}
+
+.blog_other_details .button{
+  display: block;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+  text-align: center;
+  text-transform: none;
+  width: 20%;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  float: right;
+}
+.button{
+  border-radius: 4px;
+  background: #90c352;
+  border-color: #90c352;
+  color: white;
+  text-transform: capitalize;
+  padding-top: 1em;
+  padding-bottom: 0.9em;
+  border-width: 2px;
+}
+button:hover, .button:hover {
+  background: none repeat scroll 0 0 #92DA3B;
+  border-color: #92DA3B;
+}
+button:hover, button:focus, .button:hover, .button:focus {
+  color: #FFFFFF;
+}
+
+
+.blog_div{
+  padding: 5px 0 5px 0;
+  border-bottom: 2px solid #e5e5e5;
+  border-right: 4px solid transparent;
+  margin-bottom: 10px;
+  padding-top: 12px;
+}
+.blog:hover{
+  border-right: 4px solid #e5e5e5;
+}
+
+
+/* Blog Detail Page - Meta Data */
+.entry-meta span{
+  margin-right: 15px !important;
+}
+.entry-meta span a{
+  font-size: 14px !important;
+}
+
+
+/* Blog */
+.blog_title{
+  margin-top: 0px !important;
+  font-weight: 500 !important;
+  font-size: 24px !important;
+}
+
+.entry-content p, .blog_short_description p{
+  font-size: 14px;
+}
+.blog_type{
+  border-color: red;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  font-size: 12px;
+  margin: 10px 0;
+  padding: 6px;
+  text-align: center;
+  width: 90%;
+  background: #dadada !important;
+}
+
+
+/* Post Writer */
+.wpp-list .wpp-blog-title{
+  font-size: 20px !important;
+}
+
+.wpp-list .post-stats{
+  font-size: 13px !important;
+  font-weight: 500 !important;
+}
+
+.wpp-list .writer_details{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  min-height: 140px;
+}
+
+.btn_profile_info{
+  padding: 0.6em !important;
+  margin: 3px 2.5em 3px 2.5em !important;
+}
+
+.tutorial_filter{
+  padding: 6px !important;
+}
+
+.btn_radio_type{
+  padding: 9px !important;
+  font-size: 13px !important;
+  border-right: 2px solid #2d85bf !important;
+}

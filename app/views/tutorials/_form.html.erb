@@ -1,0 +1,171 @@
+<%= form_for @tutorial, :html=> {:id => "buttonGroupForm" } do |f| %>
+  <% if @tutorial.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tutorial.errors.count, "error") %> prohibited this tutorial from being saved:</h2>
+
+      <ul>
+      <% @tutorial.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :mode %><br />
+    <% f.text_field :mode %>
+    <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-primary btn_radio_type">
+            <input type="radio" name="tutorial[mode]" id="Beginner"> Beginner
+        </label>
+        <label class="btn btn-primary btn_radio_type">
+            <input type="radio" name="tutorial[mode]" id="Intermediate"> Intermediate
+        </label>
+        <label class="btn btn-primary btn_radio_type">
+            <input type="radio" name="tutorial[mode]" id="Expert"> Expert
+        </label>
+    </div>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :time %><br />
+    <% f.text_field :time %>
+    <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-primary btn_radio_type">
+            <input type="radio" name="tutorial[time]" id="Short"> Short
+        </label>
+        <label class="btn btn-primary btn_radio_type">
+            <input type="radio" name="tutorial[time]" id="Medium"> Medium
+        </label>
+        <label class="btn btn-primary btn_radio_type">
+            <input type="radio" name="tutorial[time]" id="Long"> Long
+        </label>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :primary_category %><br />
+    <%= f.text_field :primary_category %>
+    <div class="btn-group">
+        <button type="button" class="btn btn-primary btn_radio_type">Select DB  </button>
+        <button type="button" data-toggle="dropdown" class="btn btn-primary btn_radio_type dropdown-toggle"><span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+        </ul>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :categories %><br />
+    <%= f.text_field :categories %>
+    <div class="btn-group">
+        <button type="button" class="btn btn-primary btn_radio_type">Select DB  </button>
+        <button type="button" data-toggle="dropdown" class="btn btn-primary btn_radio_type dropdown-toggle"><span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+        </ul>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.text_field :state %>
+    <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-primary btn_radio_type">
+            <input type="radio" name="tutorial[state]" id="Draft"> Draft
+        </label>
+        <label class="btn btn-primary btn_radio_type">
+            <input type="radio" name="tutorial[state]" id="Save"> <i class="fa fa-save"></i> Save
+        </label>
+        <label class="btn btn-primary btn_radio_type">
+            <input type="radio" name="tutorial[state]" id="Hide"> Hide
+        </label>
+        <label class="btn btn-primary btn_radio_type">
+            <input type="radio" name="tutorial[state]" id="Discard"> Discard
+        </label>
+        <label class="btn btn-primary btn_radio_type">
+            <input type="radio" name="tutorial[state]" id="Publish"> Publish
+        </label>
+    </div>
+
+  </div>
+  <div class="field">
+    <%= f.label :publish_date %><br />
+    <%= f.datetime_select :publish_date %>
+  </div>
+  <div class="field">
+    <%= f.label :tutorial_type %><br />
+    <%= f.text_field :tutorial_type %>
+    <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-primary btn_radio_type">
+            <input type="radio" name="tutorial[type]" id="Free"> Free
+        </label>
+        <label class="btn btn-primary btn_radio_type">
+            <input type="radio" name="tutorial[type]" id="Paid"> <i class="fa fa-save"></i> Paid
+        </label>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :content_introduction %><br />
+    <%= f.text_area :content_introduction %>
+  </div>
+  <div class="field">
+    <%= f.label :content_main %><br />
+    <%= f.text_area :content_main %>
+  </div>
+  <div class="field">
+    <%= f.label :conclusion %><br />
+    <%= f.text_area :conclusion %>
+  </div>
+  <div class="field">
+    <%= f.label :github_link %><br />
+    <%= f.text_field :github_link %>
+  </div>
+  <div class="field">
+    <%= f.label :demo_link %><br />
+    <%= f.text_field :demo_link %>
+  </div>
+  <div class="field">
+    <%= f.label :related_link %><br />
+    <%= f.text_field :related_link %>
+  </div>
+  <div class="field">
+    <%= f.label :attachment_name %><br />
+    <%= f.text_field :attachment_name %>
+  </div>
+  <div class="field">
+    <%= f.label :attachment_link %><br />
+    <%= f.text_field :attachment_link %>
+  </div>
+  <div class="field">
+    <%= f.label :video_url %><br />
+    <%= f.text_field :video_url %>
+  </div>
+  <div class="field">
+    <%= f.label :vote_up %><br />
+    <%= f.number_field :vote_up %>
+  </div>
+  <div class="field">
+    <%= f.label :total_view %><br />
+    <%= f.number_field :total_view %>
+  </div>
+  <div class="field">
+    <%= f.label :slug %><br />
+    <%= f.text_field :slug %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

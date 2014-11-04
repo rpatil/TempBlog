@@ -1,0 +1,55 @@
+
+<div id="primary" class="content-area" ng-controller="TutorialsListCtrl">
+  <main id="main" class="site-main" role="main">
+  	<!-- Filter and Count Div -->
+  	<div class="sorting clearfix">
+      <div class="col-xs-8 col-sm-6 totalItems" style="padding: 5px 0 5px 0;">
+        <i class="fa fa-search"></i>
+        <span id="totalItemsValue">{{tutorials.length}} items</span>
+      </div>
+      <div class="col-xs-4 col-sm-6 text-right" >
+      	<select ng-model="orderProp" class="form-control select-mini tutorial_filter" autocomplete="off">
+	      <option value="vote_up">Vote Up</option>
+	      <option value="total_view">Total View</option>
+	    </select>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+
+    <div class="blog_list" ng-repeat="tutorial in tutorials | orderBy:orderProp">
+      <!-- First Div Blog -->
+      <div class="blog_div" style="">
+        <div class="thumbail_image">
+          <img data-src="holder.js/140x140" class="img-thumbnail pull-left " alt="140x140" src="https://d2sis3lil8ndrq.cloudfront.net/books/angularjs1_large_3d.png" style="height: 160px;width: 120px;">
+          <div class="clearfix"></div>
+          <div class="blog_type">{{tutorial.primary_category }}</div>
+        </div>
+        <!--<div class="col-md-8 pull-right green_line">.col-md-8</div>-->
+        <div class="blog_description col-xs-9 col-sm-9 pull-right padding_left_right_ten" style="">
+          <h2 class="blog_title">
+            <a href="http://localhost:3000/ShowTutorialDetails/{{tutorial.slug}}">{{tutorial.title }}</a>
+          </h2>
+          <div class="blog_short_description">
+            <p>
+              {{tutorial.content_introduction  | limitTo : 300}} .... <a href="http://localhost:3000/ShowTutorial/{{tutorial.id}}">more</a>
+            </p>
+          </div>
+          <div class="blog_other_details">
+            <ul>
+              <li class="fa fa-rating">★★★★⋆</li>
+              <li><i class="fa fa-thumbs-up"></i> {{tutorial.vote_up }}</li>
+              <li><i class="fa fa-eye"></i> {{tutorial.total_view }}</li>              
+              <li><i class="fa fa-pencil"></i>
+                <a href="#" class="dark-link">{{tutorial.user_id }}</a>
+              </li>
+            </ul>
+            <ul>
+              <li><i class="fa fa-rating"></i>Tag : {{tutorial.categories}}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <!-- First Div Blog END -->
+	</main>
+</div>

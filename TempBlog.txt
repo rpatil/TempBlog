@@ -1,0 +1,61 @@
+== Welcome to TempBlog
+
+Tutorials 
+
+( title, user_id, 
+
+mode [Begineer, Intermidate, Expert], 
+
+Time [Short, Medium, Long], 
+
+primary_category, categories, 
+
+state [Draft, Save, Hide, Publish], 
+
+publish_date, 
+
+type [Free, Paid], 
+
+content_intro, content_main, conclusion, github_link, demo_link, related_link, attachment_name, attachment_link, video_url, vote_up, total_view, slug )
+
+
+rails g scaffold Tutorial title:string user_id:integer mode:string time:string primary_category:string categories:string state:string publish_date:datetime type:string content_introduction:text content_main:text conclusion:text github_link:string demo_link:string related_link:string attachment_name:string attachment_link:string video_url:string vote_up:integer total_view:integer slug:string
+
+
+-> rails g controller home index default blog
+
+Category ( name, display_name, status )
+
+
+
+User ( name, introduction, email, website, twitter, linkedin, facebook, stackoverflow, github )
+
+rails g scaffold User name:string email:sting introduction:text website:string follow_twitter:string follow_linkedin:string follow_facebook:string follow_stackoverflow:string follow_github:string status:boolean
+
+
+	t.string 		:crypted_password
+	t.string 		:password_salt
+	t.string 		:persistence_token
+	t.string 		:single_access_token
+	t.string 		:perishable_token
+
+	t.integer   :login_count,         :null => false, :default => 0
+  t.integer   :failed_login_count,  :null => false, :default => 0
+  t.datetime  :last_request_at
+  t.datetime  :current_login_at
+  t.datetime  :last_login_at
+  t.string    :current_login_ip
+  t.string    :last_login_ip
+
+
+
+
+
+
+Series ( Id, Name)
+
+SeriesTutorial (Id, series_id, tutorial_id, index)
+
+
+
+

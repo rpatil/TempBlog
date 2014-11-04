@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  user_id: 1
+  mode: MyString
+  time: MyString
+  primary_category: MyString
+  categories: MyString
+  state: MyString
+  publish_date: 2014-11-03 19:00:54
+  type: 
+  content_introduction: MyText
+  content_main: MyText
+  conclusion: MyText
+  github_link: MyString
+  demo_link: MyString
+  related_link: MyString
+  attachment_name: MyString
+  attachment_link: MyString
+  video_url: MyString
+  vote_up: 1
+  total_view: 1
+  slug: MyString
+
+two:
+  title: MyString
+  user_id: 1
+  mode: MyString
+  time: MyString
+  primary_category: MyString
+  categories: MyString
+  state: MyString
+  publish_date: 2014-11-03 19:00:54
+  type: 
+  content_introduction: MyText
+  content_main: MyText
+  conclusion: MyText
+  github_link: MyString
+  demo_link: MyString
+  related_link: MyString
+  attachment_name: MyString
+  attachment_link: MyString
+  video_url: MyString
+  vote_up: 1
+  total_view: 1
+  slug: MyString
