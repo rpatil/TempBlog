@@ -81,13 +81,13 @@
   </div>
   <div class="field">
     <%= f.label :state %><br />
-    <%= f.text_field :state %>
+    <% f.text_field :state %>
     <div class="btn-group" data-toggle="buttons">
         <label class="btn btn-primary btn_radio_type">
             <input type="radio" name="tutorial[state]" id="Draft"> Draft
         </label>
         <label class="btn btn-primary btn_radio_type">
-            <input type="radio" name="tutorial[state]" id="Save"> <i class="fa fa-save"></i> Save
+            <input type="radio" name="tutorial[state]" id="Save"> Save
         </label>
         <label class="btn btn-primary btn_radio_type">
             <input type="radio" name="tutorial[state]" id="Hide"> Hide
@@ -103,31 +103,32 @@
   </div>
   <div class="field">
     <%= f.label :publish_date %><br />
-    <%= f.datetime_select :publish_date %>
+    <% f.datetime_select :publish_date %>
+    <input id="tutorial_publish_date" class="datepicker_time" type="text" size="15" name="tutorial[publish_date]"> (yyyy-mm-dd hh:mm)
   </div>
   <div class="field">
     <%= f.label :tutorial_type %><br />
-    <%= f.text_field :tutorial_type %>
+    <% f.text_field :tutorial_type %>
     <div class="btn-group" data-toggle="buttons">
         <label class="btn btn-primary btn_radio_type">
             <input type="radio" name="tutorial[type]" id="Free"> Free
         </label>
         <label class="btn btn-primary btn_radio_type">
-            <input type="radio" name="tutorial[type]" id="Paid"> <i class="fa fa-save"></i> Paid
+            <input type="radio" name="tutorial[type]" id="Paid"> Paid
         </label>
     </div>
   </div>
   <div class="field">
     <%= f.label :content_introduction %><br />
-    <%= f.text_area :content_introduction %>
+    <%= f.cktext_area :content_introduction, rows: 10 %>
   </div>
   <div class="field">
     <%= f.label :content_main %><br />
-    <%= f.text_area :content_main %>
+    <%= f.cktext_area :content_main %>
   </div>
   <div class="field">
     <%= f.label :conclusion %><br />
-    <%= f.text_area :conclusion %>
+    <%= f.cktext_area :conclusion %>
   </div>
   <div class="field">
     <%= f.label :github_link %><br />

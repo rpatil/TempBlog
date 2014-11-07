@@ -10,18 +10,50 @@ blogApp.controller('TutorialsListCtrl', ['$scope', '$http',
     $scope.orderProp = 'total_view';
   }]);
 
-blogApp.controller('TutorialsDetailCtrl', ['$scope', '$routeParams', '$http',
-  function($scope, $routeParams, $http) {
-    $http.get('/ShowTutorial/' + $routeParams.id +'.json').success(function(data) {
-      $scope.tutorial = data;
-    });
-  }]);
-
 
 /*
 
-var tutorialsListServices = angular.module('tutorialsListServices', ['ngResource']);
+// Tried to access data using services for Tutorial Page
+blogApp.controller('TutorialsDetailCtrl', ['$scope', '$http', '$routeParams',
 
+  function ($scope, $http, $routeParams){
+    alert($routeParams);
+
+  $http.get("/show_tutorial_using_slug/" + $routeparams.slug).success(function(data, status, headers, config){
+    $scope.tutorial = data; 
+  }).error(function(data, status, headers, config){
+      alert("eroroorororororo"); 
+  })
+
+}]);
+
+*/
+
+
+
+
+
+
+
+
+
+/*
+blogApp.controller('TutorialsDetailCtrl', ['$scope', '$routeParams', '$http',
+  function($scope, $routeParams, $http) {
+    
+    var slug = $routeParams.slug;
+    alert(slug);
+
+    $scope.page = $rootScope.pages[slug];
+    alert($scope.page);
+
+    $http.get('/show_tutorial_using_slug/' + $routeParams).success(function(data) {
+      $scope.tutorial = data;
+    });
+  }]);
+*/
+/*
+var tutorialsListServices = angular.module('tutorialsListServices', ['ngResource']);
 tutorialsListServices.factory('Tutorials', ['$resource',
   function($resource){
     return $resource('tutorials/ShowTutorials.json', {}, {

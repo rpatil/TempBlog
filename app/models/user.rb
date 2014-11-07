@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   #  c.login_field = 'email'
   #end
 
+  #belongs_to :tutorial
+
   def email=(val)
     write_attribute(:email, val.downcase)
   end

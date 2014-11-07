@@ -199,6 +199,7 @@ button:hover, button:focus, .button:hover, .button:focus {
   flex-direction: column;
   flex-wrap: nowrap;
   min-height: 140px;
+  word-wrap: break-word;
 }
 
 .btn_profile_info{
@@ -214,4 +215,38 @@ button:hover, button:focus, .button:hover, .button:focus {
   padding: 9px !important;
   font-size: 13px !important;
   border-right: 2px solid #2d85bf !important;
+}
+
+.tutorial_details .detail_title{
+  color: #909090;
+  font: italic 12px/1.2em Georgia,serif;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+.detail_title_name {
+  border: 1px solid #dae1e5;
+  border-radius: 3px;
+  display: inline-block;
+  font-size: 11px;
+  margin: 2px;
+  padding: 2px 5px;
+}
+
+#secondary .widget .details-icon a {
+  background-color: #dadada;
+  border-radius: 3px;
+  color: #3f3f3f;
+  display: inline-block;
+  font-size: 13px;
+  height: 30px;
+  line-height: 30px;
+  list-style: none outside none;
+  margin-bottom: 5px;
+  margin-right: 0px;
+  text-align: center;
+  transition: background-color 0.5s ease 0s;
+  width: 32.4%;
+}
+#secondary .widget .details-icon a:hover {
+  background-color: #333333;
 }

@@ -43,3 +43,4 @@ gem 'date_format'
 
 gem 'friendly_id'
 
+gem "ckeditor"

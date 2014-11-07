@@ -6,7 +6,7 @@
 	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	  <meta name="viewport" content="width=1024">
 
-	  <title><%=controller.controller_name %>-<%=controller.action_name %> - Temp Blog</title>
+	  <title><%=controller.controller_name %>-<%=controller.action_name %> - Admin : Temp Blog</title>
 	  
 	  <%= stylesheet_link_tag    "application", :media => "all" %>
 
@@ -36,32 +36,19 @@
         </div>
         <div class="collapse navbar-collapse ">
           <ul class="nav navbar-nav">
-            <!--<li><a href="/themes">Themes</a></li>-->
+
             <li id="fat-menu" class="dropdown">
               <a id="userMenu" class="dropdown-toggle clearfix" data-toggle="dropdown" role="button" href="#"><i class="fa fa-desktop pull-left"></i><span>&nbsp;Tutorials</span><i class="fa fa-caret-down"></i></a>
               <ul class="dropdown-menu" aria-labelledby="drop2" role="menu">
-                <li role="presentation"><a href="/themes" tabindex="-1" role="menuitem">All Categories</a></li>
+                <li role="presentation"><a href="/tutorials" tabindex="-1" role="menuitem">Show Tutorials</a></li>
                 <li class="divider" role="presentation"></li>
-                <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Web Design</a></li>
-                <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Web Development</a></li>
-                <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Mobile</a></li>
-                <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Languages</a></li>
-                <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Testing</a></li>
-                <li class="divider" role="presentation"></li>
-                <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Paid</a></li>
-                <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Free</a></li>
+                <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Tutorials Mode</a></li>
+                <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Tutorials Time</a></li>
+                <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Tutorials State</a></li>
+                <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Tutorials Type</a></li>
               </ul>
             </li>
 
-            <li><a href="/Ebooks"><i class="fa fa-book"></i><span>&nbsp;&nbsp;Ebooks</span></a></li>
-            <li id="fat-menu" class="dropdown">
-              <a id="userMenu" class="dropdown-toggle clearfix" data-toggle="dropdown" role="button" href="#"><i class="fa fa-download pull-left"></i><span>&nbsp;Freebies</span><i class="fa fa-caret-down"></i>
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="drop2" role="menu">
-                <li role="presentation"><a href="#" tabindex="-1" role="menuitem">HTML Template</a></li>
-                <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Software</a></li>
-              </ul>
-            </li>
             <!--
             <li><a href="/sell">Sell</a></li>          	
             <li><a href="/blog">Blog</a></li>
@@ -90,7 +77,7 @@
       </div>
     </div>
 
-    <!-- Main Content -- Means Two Div-->
+    <!-- Main Content Means Two Div-->
     <div id="content" class="site-content" style="margin-top: 6%;">
 		  <div class="top-section" style=""></div>
 		  <div class="container main-content-area"  style="">

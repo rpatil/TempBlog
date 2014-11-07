@@ -30,3 +30,6 @@ class CreateUsers < ActiveRecord::Migration
     end
   end
 end
+
+# Current Designation
+# Current Company

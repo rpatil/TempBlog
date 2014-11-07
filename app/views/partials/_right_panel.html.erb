@@ -54,25 +54,73 @@
       </div><!-- end social icons -->
     </aside>
     <!-- End of Third Aside -->
-    
-    <!-- Writer Aside -->
-    <aside id="wpp-2" class="widget popular-posts">
-      <h3 class="widget-title margin-top-zero" style="margin-bottom: 10px;">Blog Writer</h3>
-      <ul class="wpp-list">
-        <li>
-          <a href="http://bootstrapbay.com/blog/free-stock-photos/" title="12 Amazing Sites With Breathtaking Free Stock Photos" target="_self">
-            <img src="http://bootstrapbay.com/blog/wp-content/uploads/2014/05/SLR-camera1-60x60.jpg" title="12 Amazing Sites With Breathtaking Free Stock Photos" alt="12 Amazing Sites With Breathtaking Free Stock Photos" width="125" height="125" class="wpp-thumbnail wpp_cached_thumb wpp_featured">
+
+
+    <!-- Tutorial Details -->
+    <aside id="sparkling-social-2" class="widget sparkling-social tutorial_details">
+      <h3 class="widget-title margin-top-zero">Tutorial Details</h3>
+      <div class="detail_title">Catergories:</div>
+      <span class="detail_title_name">HTML</span>
+      <span class="detail_title_name">jquery</span>
+      <span class="detail_title_name">css</span>
+      
+      <div class="detail_title">Catergories:</div>
+      <span class="detail_title_name">HTML</span>
+      <span class="detail_title_name">jquery</span>
+      <span class="detail_title_name">css</span>
+      
+      <!-- social icons -->
+      <div class="detail_title">Important Links:</div>
+      <div class="social-icons sticky-sidebar-social">
+        <div class="details-icon">
+          <a href="#" title="Follow us on Facebok" class="facebook" target="_blank">
+            <i class="social_icon fa fa-github"></i> Visit Github
           </a>
-          <div class="writer_details">
-            <a href="http://bootstrapbay.com/blog/free-stock-photos/" title="12 Amazing Sites With Breathtaking Free Stock Photos" class="wpp-post-title wpp-blog-title" target="_self">Raman Verma</a>
-            <span class="post-stats">Software Engineer, </span>
-            <span class="post-stats">Cybage Software Pvt Ltd, Pune</span>
-            <span class="post-stats"><i class="fa fa-envelope"></i>  raman@gmail.com</span>
-            <span class="label label-info btn_profile_info">Profile Info</span>
-          </div>
-        </li>
-      </ul>
+          <a href="https://twitter.com/bootstrapbay" title="Follow us on Twitter" class="twitter" target="_blank">
+            <i class="social_icon fa fa-twitter"></i> Demo Link
+          </a>
+          <a href="https://plus.google.com/+BootstrapbayThemes/posts" title="Follow us on Google+" class="googleplus" target="_blank">
+            <i class="social_icon fa fa-google-plus"></i> Related Link
+          </a>
+          <a href="http://www.youtube.com/user/bootstrapbayofficial" title="Follow us on Youtube" class="youtube" target="_blank">
+            <i class="social_icon fa fa-youtube"></i> Video Link
+          </a>
+          <a href="http://bootstrapbay.com/blog/feed/" title="Follow us on RSS" class="rss" target="_blank">
+            <i class="social_icon fa fa-download"></i> Attachment
+          </a>
+        </div>
+      </div><!-- end social icons -->
+
+                                                              
     </aside>
+    <!-- End of Tutorial Details -->
+
+
+
+    
+
+    <!-- Writer Aside -->
+    <% if @tutorial_writer %>
+      <aside id="wpp-2" class="widget popular-posts" style="padding-bottom: 15px;">
+        <h3 class="widget-title margin-top-zero" style="margin-bottom: 10px;">Tutorial Writer</h3>
+        <ul class="wpp-list">
+          <li>
+            <a href="#" title="#" target="_self">
+              <img src="http://bootstrapbay.com/blog/wp-content/uploads/2014/05/SLR-camera1-60x60.jpg" title="#" alt="#" width="125" height="125" class="wpp-thumbnail wpp_cached_thumb wpp_featured">
+            </a>
+            <div class="writer_details">
+              <a href="#" title="#" class="wpp-post-title wpp-blog-title" target="_self">
+                <%=@tutorial.user.name%>
+              </a>
+              <span class="post-stats"><%=@tutorial.user.name%>, </span>
+              <span class="post-stats">Cybage Software Pvt Ltd, Pune</span>
+              <span class="post-stats"><%=@tutorial.user.email%></span>
+              <span class="label label-info btn_profile_info">Profile Info</span>
+            </div>
+          </li>
+        </ul>
+      </aside>
+    <% end %>
     <!-- End of Writer Aside -->
     
     <!-- Fourth Aside -->

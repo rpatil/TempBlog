@@ -1,5 +1,6 @@
 class TutorialsController < ApplicationController
 
+  layout 'admin_application'
   def index
     @tutorials = Tutorial.all
     respond_to do |format|

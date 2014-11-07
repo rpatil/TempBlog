@@ -9,7 +9,7 @@ TempBlog::Application.routes.draw do
   match '/ShowTutorial/:id', :to => 'tutorials#show_tutorial', :via => [:get]
   match '/ShowTutorialDetails/:id', :to => 'tutorials#show_tutorial_details', :via => [:get]
 
-
+  match '/:slug' => 'home#show_tutorial_using_slug'
 
   resources :users
 

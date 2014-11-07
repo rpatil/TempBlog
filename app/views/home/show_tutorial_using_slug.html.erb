@@ -1,0 +1,72 @@
+<div id="primary" class="content-area" style="" >
+  <main id="main" class="site-main" role="main">
+    <article id="post-1794" class="post-1794 post type-post status-publish format-standard has-post-thumbnail hentry category-resources tag-bootstrap tag-builders tag-editors">
+      <div class="blog-item-wrap">
+        <a href="http://bootstrapbay.com/blog/bootstrap-editors/" title="7 Bootstrap Editors for Rapid Development of Responsive Websites">
+        <img width="95%" height="" src="/assets/blog_detail_image.png" class="single-featured wp-post-image" alt="Bootstrap Editors">
+        </a>
+        <div class="post-inner-content">
+          <header class="entry-header page-header">
+            <h1 class="entry-title">
+              <a href="/<%=@tutorial.slug%>" rel="bookmark"><%=@tutorial.title%></a>
+            </h1>
+            <div class="entry-meta">
+              <span class="posted-on">
+                <i class="fa fa-calendar"></i>
+                <a href="#" rel="bookmark">
+                  <time class="entry-date published" datetime="<%=@tutorial.created_at %>">
+                    <%=DateFormat.change_to(@tutorial.created_at, "LONG_DATE_SHORT")%>
+                  </time>
+                </a>
+              </span>
+              <span class="byline">
+                <i class="fa fa-user"></i>
+                <!--<span class="author vcard">-->
+                  <a class="url fn n" href="#">
+                    <%=@tutorial.user.name%>
+                  </a>
+                <!--</span>-->
+              </span>
+              <span class="comments-link">
+                <i class="fa fa-comment-o"></i>
+                <a href="#" title="Comment on <%=@tutorial.title%>" data-disqus-identifier="1794 http://bootstrapbay.com/blog/?p=1794">0 Comments</a>
+              </span>
+            </div><!-- .entry-meta -->
+          </header><!-- .entry-header -->
+          
+          <div class="entry-content">
+            <p><%=@tutorial.content_introduction.present? ? @tutorial.content_introduction.html_safe : "" %></p>
+
+            <p><%=@tutorial.content_main.present? ? @tutorial.content_main.html_safe : "" %></p>
+
+            <p><%=@tutorial.conclusion.present? ? @tutorial.conclusion.html_safe : "" %></p>
+
+            <p class="clearfix">
+              <a class="btn btn-primary read-more pull-right" href="http://bootstrapbay.com/blog/bootstrap-editors/" title="7 Bootstrap Editors for Rapid Development of Responsive Websites">Read More</a>
+            </p>
+
+          </div><!-- .entry-content -->
+        </div>
+      </div>
+    </article>
+  </main>
+</div>
+
+:mode => tutorial.mode.to_s,
+          :time => tutorial.time,
+          :primary_category => tutorial.primary_category,
+          :categories => tutorial.categories,
+          :state => tutorial.state,
+          :publish_date => tutorial.publish_date,
+          :tutorial_type => tutorial.tutorial_type,
+
+          :github_link => tutorial.github_link,
+          :demo_link => tutorial.demo_link,
+          :related_link => tutorial.related_link,
+          :attachment_name => tutorial.attachment_name,
+          :attachment_link => tutorial.attachment_link,
+          :video_url => tutorial.video_url,
+          :vote_up => tutorial.vote_up,
+          :total_view => tutorial.total_view,
+          :slug => tutorial.slug,
+          :created_at => tutorial.created_at
