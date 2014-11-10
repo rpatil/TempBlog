@@ -2618,19 +2618,19 @@ a {
   /*border: none; !important;*/
 }
 .input-group .form-control.search-query {
-height: 42px;
-padding: 5px 10px;
+	height: 42px;
+	padding: 5px 10px;
 }
 .input-group-btn:last-child>.btn {
-margin-left: 0;
+	margin-left: 0;
 }
 .btn.btn-default {
-color: #FFF;
-text-transform: uppercase;
+	color: #FFF;
+	text-transform: uppercase;
 }
 .btn.btn-default {
-color: #FFF;
-text-transform: uppercase;
+	color: #FFF;
+	text-transform: uppercase;
 }
 .input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group {
 margin-left: -1px !important;
@@ -2647,8 +2647,9 @@ margin-right: 5px !important;
 }
 
 #secondary .widget .social-icons {
-text-align: left;
-position: relative;
+	text-align: left;
+	position: relative;
+margin-top: 5px;
 }
 #secondary .widget {
 	/* color: #888; */

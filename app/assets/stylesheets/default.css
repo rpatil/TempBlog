@@ -9,7 +9,6 @@
 .black_line{
   border: 1px solid black;
 }
-
 .select-mini {
   font-size: 13px !important;
   height: 30px !important;
@@ -20,8 +19,6 @@
   padding-left: 0px !important;
   padding-right: 0px !important;  
 }
-
-
 .sorting {
   border-bottom: 4px solid #e5e5e5 !important;
   /*margin-bottom: 10px !important;*/
@@ -137,8 +134,6 @@ button:hover, .button:hover {
 button:hover, button:focus, .button:hover, .button:focus {
   color: #FFFFFF;
 }
-
-
 .blog_div{
   padding: 5px 0 5px 0;
   border-bottom: 2px solid #e5e5e5;
@@ -220,10 +215,10 @@ button:hover, button:focus, .button:hover, .button:focus {
 .tutorial_details .detail_title{
   color: #909090;
   font: italic 12px/1.2em Georgia,serif;
-  margin-bottom: 5px;
+  /*margin-bottom: 5px;*/
   margin-top: 5px;
 }
-.detail_title_name {
+.tutorial_details .name_box {
   border: 1px solid #dae1e5;
   border-radius: 3px;
   display: inline-block;
@@ -232,12 +227,18 @@ button:hover, button:focus, .button:hover, .button:focus {
   padding: 2px 5px;
 }
 
+.tutorial_details .name {
+  font-size: 13px;
+  font-weight: bold;
+  margin: 0 2px;
+}
+
 #secondary .widget .details-icon a {
   background-color: #dadada;
   border-radius: 3px;
   color: #3f3f3f;
   display: inline-block;
-  font-size: 13px;
+  font-size: 14px;
   height: 30px;
   line-height: 30px;
   list-style: none outside none;
@@ -245,8 +246,56 @@ button:hover, button:focus, .button:hover, .button:focus {
   margin-right: 0px;
   text-align: center;
   transition: background-color 0.5s ease 0s;
-  width: 32.4%;
+  width: 48%;
 }
 #secondary .widget .details-icon a:hover {
   background-color: #333333;
+}
+
+
+h3.widget-title {
+  color: #555 !important;
+  font-size: 16px !important;
+  text-transform: uppercase;
+  /*margin-bottom: 25px;*/
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.tutorial_details .tutorial_type{
+  padding: 0.3em 0.6em !important;
+  border-radius: 0.25em;
+  color: #fff;
+  display: inline;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  vertical-align: baseline;
+  white-space: nowrap;
+  background-color: #5bc0de;
+}
+
+.entry-meta span, .entry-meta span a{
+  color: #909090 !important;
+}
+
+#secondary .widget a.like_button {
+  color: #ffffff;
+  font-size: 12px;
+  width: 70%;
+  margin: 0 3.5em;
+}
+
+.like_message{
+  background: none repeat scroll 0 0 #3498db;
+  border-radius: 3px 0 0 3px;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  width: 70%;
+}
+
+.like_icon{
+  width: 30%;
 }

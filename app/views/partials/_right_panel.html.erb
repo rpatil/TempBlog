@@ -35,19 +35,19 @@
       <!-- social icons -->
       <div class="social-icons sticky-sidebar-social">
         <div class="social-icons">
-          <a href="https://facebook.com/bootstrapbay" title="Follow us on Facebok" class="facebook" target="_blank">
+          <a href="https://facebook.com/" title="Follow us on Facebok" class="facebook" target="_blank">
             <i class="social_icon fa fa-facebook"></i>
           </a>
-          <a href="https://twitter.com/bootstrapbay" title="Follow us on Twitter" class="twitter" target="_blank">
+          <a href="https://twitter.com/" title="Follow us on Twitter" class="twitter" target="_blank">
             <i class="social_icon fa fa-twitter"></i>
           </a>
-          <a href="https://plus.google.com/+BootstrapbayThemes/posts" title="Follow us on Google+" class="googleplus" target="_blank">
+          <a href="https://plus.google.com/" title="Follow us on Google+" class="googleplus" target="_blank">
             <i class="social_icon fa fa-google-plus"></i>
           </a>
-          <a href="http://www.youtube.com/user/bootstrapbayofficial" title="Follow us on Youtube" class="youtube" target="_blank">
+          <a href="http://www.youtube.com/" title="Follow us on Youtube" class="youtube" target="_blank">
             <i class="social_icon fa fa-youtube"></i>
           </a>
-          <a href="http://bootstrapbay.com/blog/feed/" title="Follow us on RSS" class="rss" target="_blank">
+          <a href="http://bootstrapbay.com/" title="Follow us on RSS" class="rss" target="_blank">
             <i class="social_icon fa fa-rss"></i>
           </a>
         </div>
@@ -58,55 +58,89 @@
 
     <!-- Tutorial Details -->
     <aside id="sparkling-social-2" class="widget sparkling-social tutorial_details">
-      <h3 class="widget-title margin-top-zero">Tutorial Details</h3>
-      <div class="detail_title">Catergories:</div>
-      <span class="detail_title_name">HTML</span>
-      <span class="detail_title_name">jquery</span>
-      <span class="detail_title_name">css</span>
+
+      <div class="row">
+        <div class="col-xs-12 col-md-8">
+          <h3 class="widget-title margin-top-zero" title="Tutorial Details" alt="Tutorial Details">Tutorial Details</h3>
+        </div>
+        <div class="col-xs-6 col-md-4">
+          <span title="Free Tutorial" alt="Free Tutorial" class="tutorial_type pull-right">Free</span>
+        </div>
+      </div>
+
+      <div class="detail_title" title="Catergories" alt="Catergories">Catergories:</div>
+      <span class="name_box" title="Web Development" alt="Web Development">Web Development</span>
+      <span class="name_box" title="HTML" alt="HTML">HTML</span>
+      <span class="name_box" title="jquery" alt="jquery">jquery</span>
+      <span class="name_box" title="css" alt="css">css</span>
       
-      <div class="detail_title">Catergories:</div>
-      <span class="detail_title_name">HTML</span>
-      <span class="detail_title_name">jquery</span>
-      <span class="detail_title_name">css</span>
+      <div class="detail_title" title="Tutorial Level" alt="Tutorial Level" >Tutorial Level:</div>
+      <span class="name" title="Intermediate" alt="Intermediate" >Intermediate ( Short Tutorial )</span>
+
+      <% 
+      
+      if @tutorial.github_link.present? or @tutorial.demo_link.present? or @tutorial.related_link.present? or @tutorial.attachment_name.present? or @tutorial.video_url.present? %>
       
       <!-- social icons -->
-      <div class="detail_title">Important Links:</div>
+      <div class="detail_title" title="Important Links" alt="Important Links" >Important Links:</div>
       <div class="social-icons sticky-sidebar-social">
         <div class="details-icon">
-          <a href="#" title="Follow us on Facebok" class="facebook" target="_blank">
+
+          <% if @tutorial.github_link.present? %>
+          <a href="<%=@tutorial.github_link %>" title="Visit Github - <%=@tutorial.github_link %>" class="facebook" target="_blank">
             <i class="social_icon fa fa-github"></i> Visit Github
           </a>
-          <a href="https://twitter.com/bootstrapbay" title="Follow us on Twitter" class="twitter" target="_blank">
-            <i class="social_icon fa fa-twitter"></i> Demo Link
+          <% end %>
+
+          <% if @tutorial.demo_link.present? %>
+          <a href="<%=@tutorial.demo_link %>" title="Demo Link - <%=@tutorial.demo_link %>" class="twitter" target="_blank">
+            <i class="social_icon fa fa-twitter"></i> Visit Demo
           </a>
-          <a href="https://plus.google.com/+BootstrapbayThemes/posts" title="Follow us on Google+" class="googleplus" target="_blank">
+          <% end %>
+
+          <% if false and @tutorial.related_link.present? %>
+          <a href="<%=@tutorial.related_link %>" title="Related Link - <%=@tutorial.related_link %>" class="googleplus" target="_blank">
             <i class="social_icon fa fa-google-plus"></i> Related Link
           </a>
-          <a href="http://www.youtube.com/user/bootstrapbayofficial" title="Follow us on Youtube" class="youtube" target="_blank">
-            <i class="social_icon fa fa-youtube"></i> Video Link
-          </a>
-          <a href="http://bootstrapbay.com/blog/feed/" title="Follow us on RSS" class="rss" target="_blank">
-            <i class="social_icon fa fa-download"></i> Attachment
-          </a>
-        </div>
-      </div><!-- end social icons -->
+          <% end %>
 
-                                                              
+          <% if @tutorial.video_url.present? %>
+          <a href="<%=@tutorial.video_url %>" title="Video Link - <%=@tutorial.video_url %>" class="youtube" target="_blank">
+            <i class="social_icon fa fa-youtube"></i> Visit Video
+          </a>
+          <% end %>
+
+          <% if @tutorial.attachment_name.present? %>
+          <a href="<%=@tutorial.attachment_link %>" title="Attachment - <%=@tutorial.attachment_name %>" class="rss" target="_blank">
+            <i class="social_icon fa fa-download"></i> <%=h truncate(@tutorial.attachment_name, :length => 15 ) %>
+          </a>
+          <% end %>
+
+        </div>
+      </div><!-- end social icons --> 
+
+      <p class="clearfix">
+        <div class=" read-more like_button" href="#" title="#">
+          <div class="like_message pull-left">Do you like ?<br/> Click here </div>
+
+          <div class="like_icon pull-right red_line"><i class="social_icon fa fa-like-o"></i></div>
+
+        </div>
+      </p>
+      <% end %>
+
+
     </aside>
     <!-- End of Tutorial Details -->
 
-
-
-    
-
     <!-- Writer Aside -->
     <% if @tutorial_writer %>
-      <aside id="wpp-2" class="widget popular-posts" style="padding-bottom: 15px;">
+      <aside id="wpp-2" class="widget popular-posts" style="padding-bottom: 20px;">
         <h3 class="widget-title margin-top-zero" style="margin-bottom: 10px;">Tutorial Writer</h3>
         <ul class="wpp-list">
           <li>
             <a href="#" title="#" target="_self">
-              <img src="http://bootstrapbay.com/blog/wp-content/uploads/2014/05/SLR-camera1-60x60.jpg" title="#" alt="#" width="125" height="125" class="wpp-thumbnail wpp_cached_thumb wpp_featured">
+              <img src="http://bootstrapbay.com/blog/wp-content/uploads/2014/05/SLR-camera1-60x60.jpg" title="#" alt="#" width="105" height="105" class="wpp-thumbnail wpp_cached_thumb wpp_featured">
             </a>
             <div class="writer_details">
               <a href="#" title="#" class="wpp-post-title wpp-blog-title" target="_self">
