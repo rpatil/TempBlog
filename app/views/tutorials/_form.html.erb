@@ -11,162 +11,140 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :mode %><br />
-    <% f.text_field :mode %>
-    <div class="btn-group" data-toggle="buttons">
+  <!-- First Div -->
+  <div class="row">
+    <div class="col-md-4 form-div">Title<br/>
+      <%= f.text_field :title, :class => "col-md-12" %>
+    </div>
+    <div class="col-md-4 form-div">Mode</br>
+      <div class="btn-group" data-toggle="buttons">
+        <% @tutorial_mode.each do |tutorial_mode| %>
         <label class="btn btn-primary btn_radio_type">
-            <input type="radio" name="tutorial[mode]" id="Beginner"> Beginner
+            <input type="radio" name="tutorial[mode]" id="<%=tutorial_mode.name %>" value="<%=tutorial_mode.name %>"> <%=tutorial_mode.name %>
         </label>
-        <label class="btn btn-primary btn_radio_type">
-            <input type="radio" name="tutorial[mode]" id="Intermediate"> Intermediate
-        </label>
-        <label class="btn btn-primary btn_radio_type">
-            <input type="radio" name="tutorial[mode]" id="Expert"> Expert
-        </label>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-md-4 form-div">Time<br/>
+      <div class="btn-group" data-toggle="buttons">
+        <% @tutorial_time.each do |tutorial_time| %>
+          <label class="btn btn-primary btn_radio_type">
+              <input type="radio" name="tutorial[time]" id="<%=tutorial_time.name %>" value="<%=tutorial_time.name %>"> <%=tutorial_time.name %>
+          </label>
+        <% end %>
+      </div>
     </div>
   </div>
+  <!-- End - First Div -->
+
+  <!-- Second Div -->
+  <div class="row">
+    <div class="col-md-4 form-div">Primary Category<br/>
+      <select class="form-control" name="tutorial[primary_category]" id="tutorial_primary_category">
+        <% @primary_category.each do |primary_category| %>
+          <option value="<%=primary_category.name%>"><%=primary_category.display_name%></option>
+        <% end %>
+      </select>
+    </div>
+    <div class="col-md-4 form-div">State<br/>
+      <div class="btn-group" data-toggle="buttons">
+        <% @tutorial_state.each do |tutorial_state| %>
+          <label class="btn btn-primary btn_radio_type">
+              <input type="radio" name="tutorial[state]" id="<%=tutorial_state.name %>" value="<%=tutorial_state.name %>"> <%=tutorial_state.name %>
+          </label>
+        <% end %> 
+      </div>
+    </div>
+    <div class="col-md-4 form-div">Publish Date (yyyy-mm-dd hh:mm)<br/>
+      <input id="tutorial_publish_date" class="datepicker_time col-md-8" type="text" size="15" name="tutorial[publish_date]">
+    </div>
+  </div>
+  <!-- End - Second Div -->
+
+  <!-- Third Div -->
+    <div class="row">
+      <div class="col-md-8 form-div">Categories<br/>
+        <%= f.text_field :categories, :class => "col-md-12" %>
+      </div>
+      <div class="col-md-4 form-div">Tutorial Type<br/>
+        <div class="btn-group" data-toggle="buttons">
+          <% @tutorial_type.each do |tutorial_type| %>
+            <label class="btn btn-primary btn_radio_type">
+                <input type="radio" name="tutorial[tutorial_type]" id="<%=tutorial_type.name %>" value="<%=tutorial_type.name %>"> <%=tutorial_type.name %>
+            </label>
+          <% end %>
+        </div>
+      </div>
+    </div>  
+  <!-- End - Third Div -->
 
 
-  <div class="field">
-    <%= f.label :time %><br />
-    <% f.text_field :time %>
-    <div class="btn-group" data-toggle="buttons">
-        <label class="btn btn-primary btn_radio_type">
-            <input type="radio" name="tutorial[time]" id="Short"> Short
-        </label>
-        <label class="btn btn-primary btn_radio_type">
-            <input type="radio" name="tutorial[time]" id="Medium"> Medium
-        </label>
-        <label class="btn btn-primary btn_radio_type">
-            <input type="radio" name="tutorial[time]" id="Long"> Long
-        </label>
-    </div>
-  </div>
-  <div class="field">
-    <%= f.label :primary_category %><br />
-    <%= f.text_field :primary_category %>
-    <div class="btn-group">
-        <button type="button" class="btn btn-primary btn_radio_type">Select DB  </button>
-        <button type="button" data-toggle="dropdown" class="btn btn-primary btn_radio_type dropdown-toggle"><span class="caret"></span></button>
-        <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-        </ul>
-    </div>
-  </div>
-  <div class="field">
-    <%= f.label :categories %><br />
-    <%= f.text_field :categories %>
-    <div class="btn-group">
-        <button type="button" class="btn btn-primary btn_radio_type">Select DB  </button>
-        <button type="button" data-toggle="dropdown" class="btn btn-primary btn_radio_type dropdown-toggle"><span class="caret"></span></button>
-        <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-        </ul>
-    </div>
-  </div>
-  <div class="field">
-    <%= f.label :state %><br />
-    <% f.text_field :state %>
-    <div class="btn-group" data-toggle="buttons">
-        <label class="btn btn-primary btn_radio_type">
-            <input type="radio" name="tutorial[state]" id="Draft"> Draft
-        </label>
-        <label class="btn btn-primary btn_radio_type">
-            <input type="radio" name="tutorial[state]" id="Save"> Save
-        </label>
-        <label class="btn btn-primary btn_radio_type">
-            <input type="radio" name="tutorial[state]" id="Hide"> Hide
-        </label>
-        <label class="btn btn-primary btn_radio_type">
-            <input type="radio" name="tutorial[state]" id="Discard"> Discard
-        </label>
-        <label class="btn btn-primary btn_radio_type">
-            <input type="radio" name="tutorial[state]" id="Publish"> Publish
-        </label>
-    </div>
 
-  </div>
-  <div class="field">
-    <%= f.label :publish_date %><br />
-    <% f.datetime_select :publish_date %>
-    <input id="tutorial_publish_date" class="datepicker_time" type="text" size="15" name="tutorial[publish_date]"> (yyyy-mm-dd hh:mm)
-  </div>
-  <div class="field">
-    <%= f.label :tutorial_type %><br />
-    <% f.text_field :tutorial_type %>
-    <div class="btn-group" data-toggle="buttons">
-        <label class="btn btn-primary btn_radio_type">
-            <input type="radio" name="tutorial[type]" id="Free"> Free
-        </label>
-        <label class="btn btn-primary btn_radio_type">
-            <input type="radio" name="tutorial[type]" id="Paid"> Paid
-        </label>
+  <!-- Fourth Div -->
+    <div class="row">
+      <div class="col-md-12 form-div">Short Introduction for List<br/>
+        <%= f.text_area :content_short_introduction, rows: 5, cols: 70 %>
+      </div>
     </div>
-  </div>
-  <div class="field">
-    <%= f.label :content_introduction %><br />
-    <%= f.cktext_area :content_introduction, rows: 10 %>
-  </div>
-  <div class="field">
-    <%= f.label :content_main %><br />
-    <%= f.cktext_area :content_main %>
-  </div>
-  <div class="field">
-    <%= f.label :conclusion %><br />
-    <%= f.cktext_area :conclusion %>
-  </div>
-  <div class="field">
-    <%= f.label :github_link %><br />
-    <%= f.text_field :github_link %>
-  </div>
-  <div class="field">
-    <%= f.label :demo_link %><br />
-    <%= f.text_field :demo_link %>
-  </div>
-  <div class="field">
-    <%= f.label :related_link %><br />
-    <%= f.text_field :related_link %>
-  </div>
-  <div class="field">
-    <%= f.label :attachment_name %><br />
-    <%= f.text_field :attachment_name %>
-  </div>
-  <div class="field">
-    <%= f.label :attachment_link %><br />
-    <%= f.text_field :attachment_link %>
-  </div>
-  <div class="field">
-    <%= f.label :video_url %><br />
-    <%= f.text_field :video_url %>
-  </div>
-  <div class="field">
-    <%= f.label :vote_up %><br />
-    <%= f.number_field :vote_up %>
-  </div>
-  <div class="field">
-    <%= f.label :total_view %><br />
-    <%= f.number_field :total_view %>
-  </div>
-  <div class="field">
-    <%= f.label :slug %><br />
-    <%= f.text_field :slug %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="row">
+      <div class="col-md-12 form-div">Content Introduction<br/>
+        <%= f.cktext_area :content_introduction, rows: 10 %>
+      </div>
+    </div>
+  <!-- End - Fourth Div -->
+  
+  <!-- Fifth Div -->
+    <div class="row">
+      <div class="col-md-12 form-div">Content Main<br/>
+        <%= f.cktext_area :content_main, rows: 10 %>
+      </div>
+    </div>
+  <!-- End - Fifth Div -->
+
+  <!-- Sixth Div -->
+    <div class="row">
+      <div class="col-md-12 form-div">Conclusion<br/>
+        <%= f.cktext_area :conclusion, rows: 10 %>
+      </div>
+    </div>
+  <!-- End - Sixth Div -->
+
+  <!-- Seventh Div -->
+    <div class="row">
+      <div class="col-md-4 form-div">Github Link<br/>
+        <%= f.text_field :github_link, :class => "col-md-12" %>
+      </div>
+      <div class="col-md-4 form-div">Demo Link <br/>
+        <%= f.text_field :demo_link, :class => "col-md-12" %>
+      </div>
+      <div class="col-md-4 form-div">Attachment Link <br/>
+        <%= f.text_field :attachment_link, :class => "col-md-12" %>
+      </div>
+    </div>
+  <!-- End - Seventh Div -->
+
+  <!-- Eight Div -->
+    <div class="row">
+      <div class="col-md-4 form-div">Video URL<br/>
+        <%= f.text_field :video_url, :class => "col-md-12" %>
+      </div>
+      <div class="col-md-8 form-div">Slug<br/>
+        <%= f.text_field :slug, :class => "col-md-12 readonly" %>
+      </div>
+    </div>
+  <!-- End - Eight Div -->
+
+  <!-- Ninth Div -->
+    <div class="row">
+      <div class="col-md-4 form-div"></div>
+      <div class="col-md-4 form-div"></div>
+      <div class="col-md-4 form-div"><%= f.submit %></div>
+    </div>
+  <!-- End - Ninth Div -->
 <% end %>
+
+<script type="text/javascript">
+  $(function() {
+    $("#tutorial_publish_date").datepicker();
+  });
+</script>

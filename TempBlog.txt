@@ -33,29 +33,28 @@ User ( name, introduction, email, website, twitter, linkedin, facebook, stackove
 rails g scaffold User name:string email:sting introduction:text website:string follow_twitter:string follow_linkedin:string follow_facebook:string follow_stackoverflow:string follow_github:string status:boolean
 
 
-	t.string 		:crypted_password
-	t.string 		:password_salt
-	t.string 		:persistence_token
-	t.string 		:single_access_token
-	t.string 		:perishable_token
-
-	t.integer   :login_count,         :null => false, :default => 0
-  t.integer   :failed_login_count,  :null => false, :default => 0
-  t.datetime  :last_request_at
-  t.datetime  :current_login_at
-  t.datetime  :last_login_at
-  t.string    :current_login_ip
-  t.string    :last_login_ip
-
-
-
-
-
-
 Series ( Id, Name)
 
 SeriesTutorial (Id, series_id, tutorial_id, index)
 
+Mode ( Beginner, Intermeidate, Expert )
+rails g scaffold TutorialMode name:string status:boolean
 
+Time (Short, Medium, Long)
+rails g scaffold TutorialTime name:string status:boolean
+
+State ( Draft, Hide, Publish, Discard )
+rails g scaffold TutorialState name:string status:boolean
+
+Type ( Free Paid)
+rails g scaffold TutorialType name:string status:boolean
+
+primary_category, categories, 
+
+PrimaryCategory
+rails g scaffold PrimaryCategory name:string display_name:string status:boolean
+
+Tag
+rails g scaffold Tag name:string status:boolean
 
 

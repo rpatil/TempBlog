@@ -1,0 +1,21 @@
+<h1>Tutorial Times</h1>
+
+<table class="table table-hover">
+  <tr>
+    <th>Name</th>
+    <th>Status</th>
+    <th>Options</th>
+  </tr>
+
+<% @tutorial_times.each do |tutorial_time| %>
+  <tr>
+    <td><%= tutorial_time.name %></td>
+    <td><%= tutorial_time.status %></td>
+    <td><%= link_to 'Show', tutorial_time %> | <%= link_to 'Edit', edit_tutorial_time_path(tutorial_time) %> | <%= link_to 'Destroy', tutorial_time, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tutorial time', new_tutorial_time_path %>

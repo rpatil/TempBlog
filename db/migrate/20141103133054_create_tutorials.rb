@@ -16,12 +16,17 @@ class CreateTutorials < ActiveRecord::Migration
       t.string :github_link
       t.string :demo_link
       t.string :related_link
-      t.string :attachment_name
       t.string :attachment_link
       t.string :video_url
       t.integer :vote_up,             :null => false, :default => 0
       t.integer :total_view,          :null => false, :default => 0
       t.string :slug,                 :null => false
+
+      t.text :content_short_introduction,  :null => false
+      t.datetime :updated_by_writer,  :null => false
+      t.integer :reviewed_by
+      t.datetime :reviewed_date
+      t.text :review_comment
 
       t.timestamps
     end

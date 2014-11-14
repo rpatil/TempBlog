@@ -4,7 +4,10 @@ class CreateUsers < ActiveRecord::Migration
       t.string :name,                   :null => false
       t.string :email,                  :null => false
       t.text :introduction,             :null => false
+      t.string :current_position
+      t.string :company
       t.string :website
+      t.string :skype_id
       t.string :follow_twitter
       t.string :follow_linkedin
       t.string :follow_facebook
@@ -28,8 +31,11 @@ class CreateUsers < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    User.create(name: "Rahul P", email: "rahul@mailinator.com", introduction: "Blog Writer", current_position: "Soft Eng", company: "Cybage Software, Pune" ,password: "12345", password_confirmation: "12345" )
+    User.create(name: "Sandy", email: "sandy@mailinator.com", introduction: "Blog Writer", current_position: "Recruitment Head", company: "RiseMart, Pune", password: "12345", password_confirmation: "12345" )
+    User.create(name: "Deva", email: "deva@mailinator.com", introduction: "Blog Writer", current_position: "Soft Eng", company: "Capgemini Software, Pune", password: "12345", password_confirmation: "12345" )
+    User.create(name: "Santosh", email: "santosh@mailinator.com", introduction: "Blog Writer", current_position: "Testing Engineer", company: "Clear Point, Pune", password: "12345", password_confirmation: "12345" )
+    User.create(name: "Chanchu", email: "chanchu@mailinator.com", introduction: "Blog Writer", current_position: "Soft Eng", company: "Cybage Software. Pune", password: "12345", password_confirmation: "12345" )
   end
 end
-
-# Current Designation
-# Current Company

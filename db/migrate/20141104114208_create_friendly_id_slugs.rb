@@ -1,5 +1,4 @@
 class CreateFriendlyIdSlugs < ActiveRecord::Migration
-=begin
   def self.up
     create_table :friendly_id_slugs do |t|
       t.string   :slug,           :null => false
@@ -15,5 +14,4 @@ class CreateFriendlyIdSlugs < ActiveRecord::Migration
   def self.down
     drop_table :friendly_id_slugs
   end
-=end  
 end

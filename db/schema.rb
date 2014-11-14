@@ -11,39 +11,102 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141103133054) do
+ActiveRecord::Schema.define(:version => 20141112071717) do
+
+  create_table "friendly_id_slugs", :force => true do |t|
+    t.string   "slug",                         :null => false
+    t.integer  "sluggable_id",                 :null => false
+    t.string   "sluggable_type", :limit => 40
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], :name => "index_friendly_id_slugs_on_slug_and_sluggable_type", :unique => true
+  add_index "friendly_id_slugs", ["sluggable_id"], :name => "index_friendly_id_slugs_on_sluggable_id"
+  add_index "friendly_id_slugs", ["sluggable_type"], :name => "index_friendly_id_slugs_on_sluggable_type"
+
+  create_table "primary_categories", :force => true do |t|
+    t.string   "name"
+    t.string   "display_name"
+    t.boolean  "status",       :default => true
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+  end
+
+  create_table "tags", :force => true do |t|
+    t.string   "name"
+    t.boolean  "status",     :default => true
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
+
+  create_table "tutorial_modes", :force => true do |t|
+    t.string   "name"
+    t.boolean  "status",     :default => true
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
+
+  create_table "tutorial_states", :force => true do |t|
+    t.string   "name"
+    t.boolean  "status",     :default => true
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
+
+  create_table "tutorial_times", :force => true do |t|
+    t.string   "name"
+    t.boolean  "status",     :default => true
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
+
+  create_table "tutorial_types", :force => true do |t|
+    t.string   "name"
+    t.boolean  "status",     :default => true
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
 
   create_table "tutorials", :force => true do |t|
-    t.string   "title",                               :null => false
-    t.integer  "user_id",                             :null => false
-    t.string   "mode",                                :null => false
-    t.string   "time",                                :null => false
-    t.string   "primary_category",                    :null => false
+    t.string   "title",                                     :null => false
+    t.integer  "user_id",                                   :null => false
+    t.string   "mode",                                      :null => false
+    t.string   "time",                                      :null => false
+    t.string   "primary_category",                          :null => false
     t.string   "categories"
-    t.string   "state",                               :null => false
+    t.string   "state",                                     :null => false
     t.datetime "publish_date"
-    t.string   "tutorial_type",                       :null => false
-    t.text     "content_introduction",                :null => false
+    t.string   "tutorial_type",                             :null => false
+    t.text     "content_introduction",                      :null => false
     t.text     "content_main"
     t.text     "conclusion"
     t.string   "github_link"
     t.string   "demo_link"
     t.string   "related_link"
-    t.string   "attachment_name"
     t.string   "attachment_link"
     t.string   "video_url"
-    t.integer  "vote_up",              :default => 0, :null => false
-    t.integer  "total_view",           :default => 0, :null => false
-    t.string   "slug",                                :null => false
-    t.datetime "created_at",                          :null => false
-    t.datetime "updated_at",                          :null => false
+    t.integer  "vote_up",                    :default => 0, :null => false
+    t.integer  "total_view",                 :default => 0, :null => false
+    t.string   "slug",                                      :null => false
+    t.text     "content_short_introduction",                :null => false
+    t.datetime "updated_by_writer",                         :null => false
+    t.integer  "reviewed_by"
+    t.datetime "reviewed_date"
+    t.text     "review_comment"
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
   end
+
+  add_index "tutorials", ["slug"], :name => "index_tutorials_on_slug"
 
   create_table "users", :force => true do |t|
     t.string   "name",                                   :null => false
     t.string   "email",                                  :null => false
     t.text     "introduction",                           :null => false
+    t.string   "current_position"
+    t.string   "company"
     t.string   "website"
+    t.string   "skype_id"
     t.string   "follow_twitter"
     t.string   "follow_linkedin"
     t.string   "follow_facebook"

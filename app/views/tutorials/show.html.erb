@@ -1,109 +1,120 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @tutorial.title %>
-</p>
+  <!-- First Div -->
+  <div class="row">
+    <div class="col-md-4 form-div">Title<br/>
+      <%= @tutorial.title %>
+    </div>
+    <div class="col-md-4 form-div">Author Name</br>
+      <%= @tutorial.user.name %>
+    </div>
+    <div class="col-md-4 form-div">Time<br/>
+      <%=@tutorial.time %>
+    </div>
+  </div>
+  <!-- End - First Div -->
 
-<p>
-  <b>User:</b>
-  <%= @tutorial.user_id %>
-</p>
+  <!-- 2 Div -->
+  <div class="row">
+    <div class="col-md-4 form-div">Mode<br/>
+      <%= @tutorial.mode %>
+    </div>
+    <div class="col-md-4 form-div">Primary category</br>
+      <%= @tutorial.primary_category %>
+    </div>
+    <div class="col-md-4 form-div">Categories<br/>
+      <%=@tutorial.categories %>
+    </div>
+  </div>
+  <!-- End - 2 Div -->
 
-<p>
-  <b>Mode:</b>
-  <%= @tutorial.mode %>
-</p>
+  <!-- 3 Div -->
+  <div class="row">
+    <div class="col-md-4 form-div">State<br/>
+      <%= @tutorial.state %>
+    </div>
+    <div class="col-md-4 form-div">Publish date</br>
+      <%= @tutorial.publish_date %>
+    </div>
+    <div class="col-md-4 form-div">Type<br/>
+      <%=@tutorial.tutorial_type %>
+    </div>
+  </div>
+  <!-- End - 3 Div -->
 
-<p>
-  <b>Time:</b>
-  <%= @tutorial.time %>
-</p>
+  <!-- 4 Div -->
+  <div class="row">
+    <div class="col-md-12 form-div">Content Short Introduction<br/>
+      <%= @tutorial.content_short_introduction.html_safe %>
+    </div>
+  </div>
+  <!-- End - 4 Div -->
 
-<p>
-  <b>Primary category:</b>
-  <%= @tutorial.primary_category %>
-</p>
+  <!-- 5 Div -->
+  <div class="row">
+    <div class="col-md-12 form-div">Content Introduction<br/>
+      <%= @tutorial.content_introduction.html_safe %>
+    </div>
+  </div>
+  <!-- End - 5 Div -->
 
-<p>
-  <b>Categories:</b>
-  <%= @tutorial.categories %>
-</p>
+  <!-- 6 Div -->
+  <div class="row">
+    <div class="col-md-12 form-div">Content Main<br/>
+      <%= @tutorial.content_main.html_safe %>
+    </div>
+  </div>
+  <!-- End - 6 Div -->
 
-<p>
-  <b>State:</b>
-  <%= @tutorial.state %>
-</p>
+  <!-- 7 Div -->
+  <div class="row">
+    <div class="col-md-12 form-div">Conclusion<br/>
+      <%= @tutorial.conclusion.html_safe %>
+    </div>
+  </div>
+  <!-- End - 7 Div -->
 
-<p>
-  <b>Publish date:</b>
-  <%= @tutorial.publish_date %>
-</p>
+  <!-- 8 Div -->
+  <div class="row">
+    <div class="col-md-4 form-div">Github link<br/>
+      <%= @tutorial.github_link %>
+    </div>
+    <div class="col-md-4 form-div">Demo link:</br>
+      <%= @tutorial.demo_link %>
+    </div>
+    <div class="col-md-4 form-div">Type<br/>
+      <%=@tutorial.tutorial_type %>
+    </div>
+  </div>
+  <!-- End - 8 Div -->
 
-<p>
-  <b>Type:</b>
-  <%= @tutorial.tutorial_type %>
-</p>
+  <!-- 9 Div -->
+  <div class="row">
+    <div class="col-md-4 form-div">Related link<br/>
+      <%= @tutorial.related_link %>
+    </div>
+    <div class="col-md-4 form-div">Attachment link:</br>
+      <%= @tutorial.attachment_link %>
+    </div>
+    <div class="col-md-4 form-div">Video url<br/>
+      <%=@tutorial.video_url %>
+    </div>
+  </div>
+  <!-- End - 9 Div -->
 
-<p>
-  <b>Content introduction:</b>
-  <%= @tutorial.content_introduction %>
-</p>
-
-<p>
-  <b>Content main:</b>
-  <%= @tutorial.content_main %>
-</p>
-
-<p>
-  <b>Conclusion:</b>
-  <%= @tutorial.conclusion %>
-</p>
-
-<p>
-  <b>Github link:</b>
-  <%= @tutorial.github_link %>
-</p>
-
-<p>
-  <b>Demo link:</b>
-  <%= @tutorial.demo_link %>
-</p>
-
-<p>
-  <b>Related link:</b>
-  <%= @tutorial.related_link %>
-</p>
-
-<p>
-  <b>Attachment name:</b>
-  <%= @tutorial.attachment_name %>
-</p>
-
-<p>
-  <b>Attachment link:</b>
-  <%= @tutorial.attachment_link %>
-</p>
-
-<p>
-  <b>Video url:</b>
-  <%= @tutorial.video_url %>
-</p>
-
-<p>
-  <b>Vote up:</b>
-  <%= @tutorial.vote_up %>
-</p>
-
-<p>
-  <b>Total view:</b>
-  <%= @tutorial.total_view %>
-</p>
-
-<p>
-  <b>Slug:</b>
-  <%= @tutorial.slug %>
-</p>
+  <!-- 10 Div -->
+  <div class="row">
+    <div class="col-md-4 form-div">Vote up<br/>
+      <%= @tutorial.vote_up %>
+    </div>
+    <div class="col-md-4 form-div">Total view:</br>
+      <%= @tutorial.total_view %>
+    </div>
+    <div class="col-md-4 form-div">Slug<br/>
+      <%=@tutorial.slug %>
+    </div>
+  </div>
+  <!-- End - 10 Div -->
 
 
 <%= link_to 'Edit', edit_tutorial_path(@tutorial) %> |

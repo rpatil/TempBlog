@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @tutorial_time.name %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @tutorial_time.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_tutorial_time_path(@tutorial_time) %> |
+<%= link_to 'Back', tutorial_times_path %>

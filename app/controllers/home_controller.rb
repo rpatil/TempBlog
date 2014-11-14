@@ -12,6 +12,16 @@ class HomeController < ApplicationController
   	@tutorial = Tutorial.find_by_slug(params[:slug])
 
   	@tutorial_writer = @tutorial.user.name.present? ? true : false
+  	@tutorial_details = false
+
+		if @tutorial.github_link.present? or 
+			@tutorial.demo_link.present? or 
+				@tutorial.related_link.present? or 
+					@tutorial.attachment_name.present? or 
+						@tutorial.video_url.present?
+			@tutorial_details = true
+		end
+
 		respond_to do |format|
       format.html
       format.json { render json: @tutorial }

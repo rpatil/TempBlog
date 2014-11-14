@@ -10,28 +10,23 @@ class TutorialsController < ApplicationController
   end
 
   def show
-=begin
-    @tutorial = Tutorial.find(params[:id])
-    if request.path != tutorials_path(@tutorial)
-      redirect_to @tutorial, status: :moved_permanently
-    else
-      respond_to do |format|
-        format.html # show.html.erb
-        format.json { render json: @tutorial }
-      end
-    end
-
-=end
     @tutorial = Tutorial.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @tutorial }
-    end
-    
+    end    
   end
 
   def new
     @tutorial = Tutorial.new
+
+    @tutorial_mode = TutorialMode.all
+    @tutorial_state = TutorialState.all
+    @tutorial_time = TutorialTime.all
+    @tutorial_type = TutorialType.all
+    @primary_category = PrimaryCategory.all
+    @tags = Tag.all
+
     respond_to do |format|
       format.html
       format.json { render json: @tutorial }
@@ -39,12 +34,20 @@ class TutorialsController < ApplicationController
   end
 
   def edit
+    @tutorial_mode = TutorialMode.all
+    @tutorial_state = TutorialState.all
+    @tutorial_time = TutorialTime.all
+    @tutorial_type = TutorialType.all
+    @primary_category = PrimaryCategory.all
+    @tags = Tag.all
+
     @tutorial = Tutorial.find(params[:id])
   end
 
   def create
-=begin    
     @tutorial = Tutorial.new(params[:tutorial])
+    @tutorial.user_id = 1
+    @tutorial.updated_by_writer = Time.now
     respond_to do |format|
       if @tutorial.save
         format.html { redirect_to @tutorial, notice: 'Tutorial was successfully created.' }
@@ -54,7 +57,6 @@ class TutorialsController < ApplicationController
         format.json { render json: @tutorial.errors, status: :unprocessable_entity }
       end
     end
-=end    
   end
 
   def update
@@ -81,16 +83,16 @@ class TutorialsController < ApplicationController
     end
   end
 
-  def list_tutorials
-    #byebug
+  def tutorials_list
     @tutorials = Tutorial.all
     respond_to do |format|
-      format.json { render json: @tutorials }
+      format.json do
+        render :json => custom_json_for_tutorial_list(@tutorials)
+      end
     end
   end
 
   def show_tutorial
-    #byebug
     @tutorial = Tutorial.find_by_id(params[:id])
     respond_to do |format|
       format.json { render json: @tutorial }
@@ -100,4 +102,38 @@ class TutorialsController < ApplicationController
   def show_tutorial_details
   end
 
+  def custom_json_for_tutorial_list(tutorials)
+    #byebug
+    tutorials_list=[]
+
+    tutorials.each do |tutorial|
+      tutorials_list <<  
+        { 
+          :tutorial_id => tutorial.id,
+          :title => tutorial.title.to_s,
+          :author_name => tutorial.user.name.to_s,
+          :mode => tutorial.mode.to_s,
+          :time => tutorial.time,
+          :primary_category => tutorial.primary_category,
+          :categories => tutorial.categories,
+          :state => tutorial.state,
+          :publish_date => tutorial.publish_date,
+          :tutorial_type => tutorial.tutorial_type,
+          :content_short_introduction => tutorial.content_short_introduction,
+          :content_introduction => tutorial.content_introduction,
+          :content_main => tutorial.content_main,
+          :conclusion => tutorial.conclusion,
+          :github_link => tutorial.github_link,
+          :demo_link => tutorial.demo_link,
+          :related_link => tutorial.related_link,
+          :attachment_link => tutorial.attachment_link,
+          :video_url => tutorial.video_url,
+          :vote_up => tutorial.vote_up,
+          :total_view => tutorial.total_view,
+          :slug => tutorial.slug,
+          :created_at => tutorial.created_at
+        }
+      return tutorials_list.to_json
+    end
+  end
 end

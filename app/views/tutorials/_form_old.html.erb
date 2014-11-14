@@ -1,0 +1,188 @@
+<style>
+.form-div{
+  background-color: rgba(86, 61, 124, 0.15);
+  border: 1px solid rgba(86, 61, 124, 0.2);
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+</style>
+
+<%= form_for @tutorial, :html=> {:id => "buttonGroupForm" } do |f| %>
+  <% if @tutorial.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tutorial.errors.count, "error") %> prohibited this tutorial from being saved:</h2>
+
+      <ul>
+      <% @tutorial.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="row">
+    <div class="col-md-4 form-div">.col-md-4</div>
+    <div class="col-md-4 form-div">.col-md-4</div>
+    <div class="col-md-4 form-div">.col-md-4</div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-4 form-div">Title<br/>
+      <%= f.text_field :title, :class => "col-md-12" %>
+    </div>
+    <div class="col-md-4 form-div">Mode</br>
+      <div class="btn-group" data-toggle="buttons">
+        <% @tutorial_mode.each do |tutorial_mode| %>
+        <label class="btn btn-primary btn_radio_type">
+            <input type="radio" name="tutorial[mode]" id="<%=tutorial_mode.name %>"> <%=tutorial_mode.name %>
+        </label>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-md-4 form-div">Time<br/>
+      <div class="btn-group" data-toggle="buttons">
+        <% @tutorial_time.each do |tutorial_time| %>
+          <label class="btn btn-primary btn_radio_type">
+              <input type="radio" name="tutorial[time]" id="<%=tutorial_time.name %>"> <%=tutorial_time.name %>
+          </label>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :mode %><br />
+    <% f.text_field :mode %>
+
+    <div class="btn-group" data-toggle="buttons">
+      <% @tutorial_mode.each do |tutorial_mode| %>
+      <label class="btn btn-primary btn_radio_type">
+          <input type="radio" name="tutorial[mode]" id="<%=tutorial_mode.name %>"> <%=tutorial_mode.name %>
+      </label>
+      <% end %>
+    </div>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :time %><br />
+    <% f.text_field :time %>
+    <div class="btn-group" data-toggle="buttons">
+      <% @tutorial_time.each do |tutorial_time| %>
+        <label class="btn btn-primary btn_radio_type">
+            <input type="radio" name="tutorial[time]" id="<%=tutorial_time.name %>"> <%=tutorial_time.name %>
+        </label>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :primary_category %><br />
+    <% f.text_field :primary_category %>
+    <div class="btn-group">
+      <select class="form-control">
+        <% @primary_category.each do |primary_category| %>
+          <option name="tutorial[primary_category]" id="tutorial_primary_category" value="<%=primary_category.name%>"><%=primary_category.display_name%></option>
+        <% end %>
+      </select>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :categories %><br />
+    <%= f.text_field :categories %>
+  </div>
+
+  <div class="field">
+    <%= f.label :state %><br />
+    <% f.text_field :state %>
+    <div class="btn-group" data-toggle="buttons">
+      <% @tutorial_state.each do |tutorial_state| %>
+        <label class="btn btn-primary btn_radio_type">
+            <input type="radio" name="tutorial[state]" id="<%=tutorial_state.name %>"> <%=tutorial_state.name %>
+        </label>
+      <% end %> 
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :publish_date %><br />
+    <% f.datetime_select :publish_date %>
+    <input id="tutorial_publish_date" class="datepicker_time" type="text" size="15" name="tutorial[publish_date]"> (yyyy-mm-dd hh:mm)
+  </div>
+
+  <div class="field">
+    <%= f.label :tutorial_type %><br />
+    <% f.text_field :tutorial_type %>
+    <div class="btn-group" data-toggle="buttons">
+      <% @tutorial_type.each do |tutorial_type| %>
+        <label class="btn btn-primary btn_radio_type">
+            <input type="radio" name="tutorial[type]" id="<%=tutorial_type.name %>"> <%=tutorial_type.name %>
+        </label>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :content_introduction %><br />
+    <%= f.cktext_area :content_introduction, rows: 10 %>
+  </div>
+  <div class="field">
+    <%= f.label :content_main %><br />
+    <%= f.cktext_area :content_main %>
+  </div>
+  <div class="field">
+    <%= f.label :conclusion %><br />
+    <%= f.cktext_area :conclusion %>
+  </div>
+  <div class="field">
+    <%= f.label :github_link %><br />
+    <%= f.text_field :github_link %>
+  </div>
+  <div class="field">
+    <%= f.label :demo_link %><br />
+    <%= f.text_field :demo_link %>
+  </div>
+  <div class="field">
+    <%= f.label :related_link %><br />
+    <%= f.text_field :related_link %>
+  </div>
+  <div class="field">
+    <%= f.label :attachment_name %><br />
+    <%= f.text_field :attachment_name %>
+  </div>
+  <div class="field">
+    <%= f.label :attachment_link %><br />
+    <%= f.text_field :attachment_link %>
+  </div>
+  <div class="field">
+    <%= f.label :video_url %><br />
+    <%= f.text_field :video_url %>
+  </div>
+  <div class="field">
+    <%= f.label :vote_up %><br />
+    <%= f.number_field :vote_up %>
+  </div>
+  <div class="field">
+    <%= f.label :total_view %><br />
+    <%= f.number_field :total_view %>
+  </div>
+  <div class="field">
+    <%= f.label :slug %><br />
+    <%= f.text_field :slug %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

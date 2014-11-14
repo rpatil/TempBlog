@@ -1,17 +1,26 @@
 TempBlog::Application.routes.draw do
   
+  resources :tags
+  resources :primary_categories
+  resources :tutorial_types
+  resources :tutorial_states
+  resources :tutorial_times
+  resources :tutorial_modes
+  resources :users
+
+
   get "home/index"
   get "home/default"
   get "home/blog"
 
   resources :tutorials
-  match '/TutorialsList', :to => 'tutorials#list_tutorials', :via => [:get]
+  match '/TutorialsList', :to => 'tutorials#tutorials_list', :via => [:get]
   match '/ShowTutorial/:id', :to => 'tutorials#show_tutorial', :via => [:get]
   match '/ShowTutorialDetails/:id', :to => 'tutorials#show_tutorial_details', :via => [:get]
 
   match '/:slug' => 'home#show_tutorial_using_slug'
 
-  resources :users
+  
 
   get "demo/page1"
   get "demo/page2"

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @primary_category.name %>
+</p>
+
+<p>
+  <b>Display name:</b>
+  <%= @primary_category.display_name %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @primary_category.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_primary_category_path(@primary_category) %> |
+<%= link_to 'Back', primary_categories_path %>

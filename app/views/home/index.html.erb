@@ -31,7 +31,7 @@
           </h2>
           <div class="blog_short_description">
             <p>
-              {{tutorial.content_introduction  | limitTo : 300}} .... <a href="http://localhost:3000/ShowTutorial/{{tutorial.id}}">more</a>
+              {{tutorial.content_short_introduction  | limitTo : 300}} .... <a href="http://localhost:3000/ShowTutorial/{{tutorial.id}}">more</a>
             </p>
           </div>
           <div class="blog_other_details">
@@ -40,7 +40,7 @@
               <li><i class="fa fa-thumbs-up"></i> {{tutorial.vote_up }}</li>
               <li><i class="fa fa-eye"></i> {{tutorial.total_view }}</li>              
               <li><i class="fa fa-pencil"></i>
-                <a href="#" class="dark-link">{{tutorial.user_id }}</a>
+                <a href="#" class="dark-link">{{tutorial.author_name }}</a>
               </li>
             </ul>
             <ul>

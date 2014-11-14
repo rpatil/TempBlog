@@ -1,0 +1,21 @@
+<h1>Tutorial Modes</h1>
+
+<table class="table table-hover">
+  <tr>
+    <th>Name</th>
+    <th>Status</th>
+    <th>Options</th>
+  </tr>
+
+<% @tutorial_modes.each do |tutorial_mode| %>
+  <tr>
+    <td><%= tutorial_mode.name %></td>
+    <td><%= tutorial_mode.status %></td>
+    <td><%= link_to 'Show', tutorial_mode %> | <%= link_to 'Edit', edit_tutorial_mode_path(tutorial_mode) %> | <%= link_to 'Destroy', tutorial_mode, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tutorial mode', new_tutorial_mode_path %>

@@ -10,12 +10,15 @@
 	  
 	  <%= stylesheet_link_tag    "application", :media => "all" %>
 
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
+
     <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular.min.js"></script>
 
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	  <%= javascript_include_tag "application" %>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 
 
 	  <%= csrf_meta_tags %>
@@ -37,20 +40,36 @@
         <div class="collapse navbar-collapse ">
           <ul class="nav navbar-nav">
 
+            <li<% if controller.controller_name == "users" %> class="active"<% end%> ><a href="/users">Users</a></li>
+
+            <li<% if controller.controller_name == "tutorials" %> class="active"<% end%> ><a href="/tutorials">Tutorials</a></li>
+
+            <li<% if controller.controller_name == "tutorial_modes" %> class="active"<% end%> ><a href="/tutorial_modes">Mode</a></li>
+
+            <li<% if controller.controller_name == "tutorial_times" %> class="active"<% end%> ><a href="/tutorial_times">Time</a></li> 
+
+            <li<% if controller.controller_name == "tutorial_states" %> class="active"<% end%> ><a href="/tutorial_states">State</a></li> 
+
+            <li<% if controller.controller_name == "tutorial_types" %> class="active"<% end%> ><a href="/tutorial_types">Type</a></li>           
+
+            <li<% if controller.controller_name == "primary_categories" %> class="active"<% end%> ><a href="/primary_categories">Categories</a></li>
+
+            <li<% if controller.controller_name == "tags" %> class="active"<% end%> ><a href="/tags">Tags</a></li>
+
+            <!--
             <li id="fat-menu" class="dropdown">
               <a id="userMenu" class="dropdown-toggle clearfix" data-toggle="dropdown" role="button" href="#"><i class="fa fa-desktop pull-left"></i><span>&nbsp;Tutorials</span><i class="fa fa-caret-down"></i></a>
               <ul class="dropdown-menu" aria-labelledby="drop2" role="menu">
                 <li role="presentation"><a href="/tutorials" tabindex="-1" role="menuitem">Show Tutorials</a></li>
                 <li class="divider" role="presentation"></li>
-                <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Tutorials Mode</a></li>
-                <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Tutorials Time</a></li>
-                <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Tutorials State</a></li>
-                <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Tutorials Type</a></li>
+                <li role="presentation"><a href="/tutorial_modes" tabindex="-1" role="menuitem">Tutorials Mode</a></li>
+                <li role="presentation"><a href="/tutorial_times" tabindex="-1" role="menuitem">Tutorials Time</a></li>
+                <li role="presentation"><a href="/tutorial_states" tabindex="-1" role="menuitem">Tutorials State</a></li>
+                <li role="presentation"><a href="/tutorial_types" tabindex="-1" role="menuitem">Tutorials Type</a></li>
               </ul>
             </li>
-
-            <!--
-            <li><a href="/sell">Sell</a></li>          	
+            
+            <li><a href="/sell">Sell</a></li>
             <li><a href="/blog">Blog</a></li>
             -->
           </ul>
@@ -82,11 +101,11 @@
 		  <div class="top-section" style=""></div>
 		  <div class="container main-content-area"  style="">
 		    <div class="row" style="">
-		      <div id="content" class="main-content-inner col-sm-12 col-md-8 pull-left" style="">
+		      <div id="content" class="main-content-inner col-sm-12 col-md-12 pull-left" style="">
 		      	<%= yield %>
 		      </div>
 
-		      <%= render "partials/right_panel"%>
+		      <% render "partials/right_panel"%>
       </div>
 	  </div>
 	</div>
