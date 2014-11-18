@@ -10,6 +10,7 @@ class HomeController < ApplicationController
 
   def show_tutorial_using_slug
   	@tutorial = Tutorial.find_by_slug(params[:slug])
+  	byebug
 
   	@tutorial_writer = @tutorial.user.name.present? ? true : false
   	@tutorial_details = false

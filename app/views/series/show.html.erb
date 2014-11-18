@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @series.name %>
+</p>
+
+<p>
+  <b>Short description:</b>
+  <%= @series.short_description %>
+</p>
+
+<p>
+  <b>Tag:</b>
+  <%= @series.tag %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @series.status %>
+</p>
+
+<p>
+  <b>Series picture file name:</b>
+  <%= @series.series_picture_file_name %>
+</p>
+
+<p>
+  <b>Series picture content type:</b>
+  <%= @series.series_picture_content_type %>
+</p>
+
+<p>
+  <b>Series picture file size:</b>
+  <%= @series.series_picture_file_size %>
+</p>
+
+<p>
+  <b>Series picture updated at:</b>
+  <%= @series.series_picture_updated_at %>
+</p>
+
+<p>
+  <b>Vote up:</b>
+  <%= @series.vote_up %>
+</p>
+
+<p>
+  <b>Total view:</b>
+  <%= @series.total_view %>
+</p>
+
+<p>
+  <b>Slug:</b>
+  <%= @series.slug %>
+</p>
+
+
+<%= link_to 'Edit', edit_series_path(@series) %> |
+<%= link_to 'Back', series_index_path %>

@@ -1,0 +1,61 @@
+<%= form_for(@series) do |f| %>
+  <% if @series.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@series.errors.count, "error") %> prohibited this series from being saved:</h2>
+
+      <ul>
+      <% @series.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :short_description %><br />
+    <%= f.text_area :short_description %>
+  </div>
+  <div class="field">
+    <%= f.label :tag %><br />
+    <%= f.text_field :tag %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br />
+    <%= f.check_box :status %>
+  </div>
+  <div class="field">
+    <%= f.label :series_picture_file_name %><br />
+    <%= f.text_field :series_picture_file_name %>
+  </div>
+  <div class="field">
+    <%= f.label :series_picture_content_type %><br />
+    <%= f.text_field :series_picture_content_type %>
+  </div>
+  <div class="field">
+    <%= f.label :series_picture_file_size %><br />
+    <%= f.number_field :series_picture_file_size %>
+  </div>
+  <div class="field">
+    <%= f.label :series_picture_updated_at %><br />
+    <%= f.datetime_select :series_picture_updated_at %>
+  </div>
+  <div class="field">
+    <%= f.label :vote_up %><br />
+    <%= f.number_field :vote_up %>
+  </div>
+  <div class="field">
+    <%= f.label :total_view %><br />
+    <%= f.number_field :total_view %>
+  </div>
+  <div class="field">
+    <%= f.label :slug %><br />
+    <%= f.text_field :slug %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

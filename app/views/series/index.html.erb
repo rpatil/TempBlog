@@ -1,0 +1,45 @@
+<h1>Series</h1>
+
+<table class="table table-hover">
+  <tr>
+    <th>Name</th>
+    <!--
+    <th>Short description</th>
+    <th>Tag</th>
+    -->
+    <th>Status</th>
+    
+    <!--<th>Series picture file name</th>
+    <th>Series picture content type</th>
+    <th>Series picture file size</th>
+    <th>Series picture updated at</th>
+    -->
+    <th>Vote up</th>
+    <th>Total view</th>
+    <th>Slug</th>
+    <th>Options</th>
+  </tr>
+
+<% @series.each do |series| %>
+  <tr>
+    <td><%= series.name %></td>
+    <!--
+    <td><%= series.short_description %></td>
+    <td><%= series.tag %></td> -->
+    
+    <td><%= series.status %></td>
+    <!--<td><%= series.series_picture_file_name %></td>
+    <td><%= series.series_picture_content_type %></td>
+    <td><%= series.series_picture_file_size %></td>
+    <td><%= series.series_picture_updated_at %></td> -->
+    <td><%= series.vote_up %></td>
+    <td><%= series.total_view %></td>
+    <td><%= series.slug %></td>
+    <td><%= link_to 'Show', series %> | <%= link_to 'Edit', edit_series_path(series) %> | <%= link_to 'Destroy', series, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Series', new_series_path %>

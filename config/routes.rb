@@ -1,5 +1,8 @@
 TempBlog::Application.routes.draw do
   
+  resources :series
+
+
   resources :tags
   resources :primary_categories
   resources :tutorial_types

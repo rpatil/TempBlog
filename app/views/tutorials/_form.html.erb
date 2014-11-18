@@ -19,7 +19,7 @@
     <div class="col-md-4 form-div">Mode</br>
       <div class="btn-group" data-toggle="buttons">
         <% @tutorial_mode.each do |tutorial_mode| %>
-        <label class="btn btn-primary btn_radio_type">
+        <label class="btn btn-primary btn_radio_type <% if @tutorial.mode == tutorial_mode.name%>active <% end %>">
             <input type="radio" name="tutorial[mode]" id="<%=tutorial_mode.name %>" value="<%=tutorial_mode.name %>"> <%=tutorial_mode.name %>
         </label>
         <% end %>
@@ -28,7 +28,7 @@
     <div class="col-md-4 form-div">Time<br/>
       <div class="btn-group" data-toggle="buttons">
         <% @tutorial_time.each do |tutorial_time| %>
-          <label class="btn btn-primary btn_radio_type">
+          <label class="btn btn-primary btn_radio_type <% if @tutorial.time == tutorial_time.name%>active <% end %>">
               <input type="radio" name="tutorial[time]" id="<%=tutorial_time.name %>" value="<%=tutorial_time.name %>"> <%=tutorial_time.name %>
           </label>
         <% end %>
@@ -42,21 +42,21 @@
     <div class="col-md-4 form-div">Primary Category<br/>
       <select class="form-control" name="tutorial[primary_category]" id="tutorial_primary_category">
         <% @primary_category.each do |primary_category| %>
-          <option value="<%=primary_category.name%>"><%=primary_category.display_name%></option>
+          <option value="<%=primary_category.display_name%>"><%=primary_category.display_name%></option>
         <% end %>
       </select>
     </div>
     <div class="col-md-4 form-div">State<br/>
       <div class="btn-group" data-toggle="buttons">
         <% @tutorial_state.each do |tutorial_state| %>
-          <label class="btn btn-primary btn_radio_type">
+          <label class="btn btn-primary btn_radio_type <% if @tutorial.state == tutorial_state.name%>active <% end %>">
               <input type="radio" name="tutorial[state]" id="<%=tutorial_state.name %>" value="<%=tutorial_state.name %>"> <%=tutorial_state.name %>
           </label>
         <% end %> 
       </div>
     </div>
     <div class="col-md-4 form-div">Publish Date (yyyy-mm-dd hh:mm)<br/>
-      <input id="tutorial_publish_date" class="datepicker_time col-md-8" type="text" size="15" name="tutorial[publish_date]">
+      <input id="tutorial_publish_date" class="datepicker_time col-md-8" type="text" size="15" name="tutorial[publish_date]" value="<%=@tutorial.publish_date %>">
     </div>
   </div>
   <!-- End - Second Div -->
@@ -69,16 +69,14 @@
       <div class="col-md-4 form-div">Tutorial Type<br/>
         <div class="btn-group" data-toggle="buttons">
           <% @tutorial_type.each do |tutorial_type| %>
-            <label class="btn btn-primary btn_radio_type">
-                <input type="radio" name="tutorial[tutorial_type]" id="<%=tutorial_type.name %>" value="<%=tutorial_type.name %>"> <%=tutorial_type.name %>
+            <label class="btn btn-primary btn_radio_type <% if @tutorial.tutorial_type == tutorial_type.name%>active <% end %>">
+              <input type="radio" name="tutorial[tutorial_type]" id="<%=tutorial_type.name %>" value="<%=tutorial_type.name %>"> <%=tutorial_type.name %>
             </label>
           <% end %>
         </div>
       </div>
     </div>  
   <!-- End - Third Div -->
-
-
 
   <!-- Fourth Div -->
     <div class="row">

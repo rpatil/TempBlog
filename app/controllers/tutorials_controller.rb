@@ -133,7 +133,7 @@ class TutorialsController < ApplicationController
           :slug => tutorial.slug,
           :created_at => tutorial.created_at
         }
-      return tutorials_list.to_json
     end
+    tutorials_list.to_json
   end
 end

@@ -131,7 +131,7 @@
     <% end %>
 
     <!-- Writer Aside -->
-    <% if @tutorial_writer %>
+    <% if @tutorial_writer and false%>
       <aside id="wpp-2" class="widget popular-posts" style="padding-bottom: 20px;">
         <h3 class="widget-title margin-top-zero" style="margin-bottom: 10px;">About <%=@tutorial.user.name%> </h3>
         <ul class="wpp-list">
@@ -155,45 +155,37 @@
       </aside>
     <% end %>
     <!-- End of Writer Aside -->
+
+    <!-- Trail Writer Aside -->
+    <% if @tutorial_writer %>
+      <aside id="wpp-2" class="widget popular-posts" style="padding-bottom: 20px; min-height: 160px;">
+        <h3 class="widget-title margin-top-zero" style="margin-bottom: 10px;">About ## <%=@tutorial.user.name%> </h3>
+        <ul class="wpp-list" style="font-size: 0.8em;">
+          <li>
+            <p>
+              <a href="#" title="#" target="_self">
+              <img src="http://bootstrapbay.com/blog/wp-content/uploads/2014/05/SLR-camera1-60x60.jpg" title="#" alt="#" width="50" height="50" class="wpp-thumbnail wpp_cached_thumb wpp_featured">
+            </a>
+            <%=@tutorial.user.short_introduction %> 
+            </p>
+          </li>
+        </ul>
+      </aside>
+    <% end %>
+    <!-- End of Trail Writer Aside -->
     
     <!-- Fourth Aside -->
     <aside id="wpp-2" class="widget popular-posts">
       <h3 class="widget-title margin-top-zero">Popular Posts</h3>
       <ul class="wpp-list">
         <li>
-          <a href="http://bootstrapbay.com/blog/free-stock-photos/" title="12 Amazing Sites With Breathtaking Free Stock Photos" target="_self">
-            <img src="http://bootstrapbay.com/blog/wp-content/uploads/2014/05/SLR-camera1-60x60.jpg" title="12 Amazing Sites With Breathtaking Free Stock Photos" alt="12 Amazing Sites With Breathtaking Free Stock Photos" width="60" height="60" class="wpp-thumbnail wpp_cached_thumb wpp_featured">
+          <a href="#" title="" target="_self">
+            <img src="http://bootstrapbay.com/blog/wp-content/uploads/2014/05/SLR-camera1-60x60.jpg" title="#" alt="" width="60" height="60" class="wpp-thumbnail wpp_cached_thumb wpp_featured">
           </a>
-          <a href="http://bootstrapbay.com/blog/free-stock-photos/" title="12 Amazing Sites With Breathtaking Free Stock Photos" class="wpp-post-title" target="_self">12 Amazing Sites With Breathtaking Free Stock Photos</a>
+          <a href="#" title="" class="wpp-post-title" target="_self">12 Amazing Sites With Breathtaking Free Stock Photos</a>
           <span class="post-stats"></span>
         </li>
-        <li>
-          <a href="http://bootstrapbay.com/blog/bootstrap-3-carousel-tutorial/" title="Bootstrap 3 Carousel Tutorial" target="_self">
-            <img src="http://bootstrapbay.com/blog/wp-content/uploads/2014/07/bootstrap-carousel1-60x60.png" title="Bootstrap 3 Carousel Tutorial" alt="Bootstrap 3 Carousel Tutorial" width="60" height="60" class="wpp-thumbnail wpp_cached_thumb wpp_featured">
-          </a>
-          <a href="http://bootstrapbay.com/blog/bootstrap-3-carousel-tutorial/" title="Bootstrap 3 Carousel Tutorial" class="wpp-post-title" target="_self">Bootstrap 3 Carousel Tutorial</a>
-          <span class="post-stats"></span>
-        </li>
-        <li>
-          <a href="http://bootstrapbay.com/blog/bootstrap-editors/" title="7 Bootstrap Editors for Rapid Development of Responsive Websites" target="_self">
-            <img src="http://bootstrapbay.com/blog/wp-content/uploads/2014/10/bootstrap-editors1-60x60.png" title="7 Bootstrap Editors for Rapid Development of Responsive Websites" alt="7 Bootstrap Editors for Rapid Development of Responsive Websites" width="60" height="60" class="wpp-thumbnail wpp_cached_thumb wpp_featured">
-          </a>
-          <a href="http://bootstrapbay.com/blog/bootstrap-editors/" title="7 Bootstrap Editors for Rapid Development of Responsive Websites" class="wpp-post-title" target="_self">7 Bootstrap Editors for Rapid Development of Responsive Websites</a>  
-          <span class="post-stats"></span> 
-        </li>
-        <li>
-          <a href="http://bootstrapbay.com/blog/google-web-fonts/" title="Top 20 Google Web Fonts and How to Use Them" target="_self">
-            <img src="http://bootstrapbay.com/blog/wp-content/uploads/2014/03/google-web-fonts-60x60.png" title="Top 20 Google Web Fonts and How to Use Them" alt="Top 20 Google Web Fonts and How to Use Them" width="60" height="60" class="wpp-thumbnail wpp_cached_thumb wpp_featured">
-          </a>
-          <a href="http://bootstrapbay.com/blog/google-web-fonts/" title="Top 20 Google Web Fonts and How to Use Them" class="wpp-post-title" target="_self">Top 20 Google Web Fonts and How to Use Them</a>  <span class="post-stats"></span> 
-        </li>
-        <li>
-          <a href="http://bootstrapbay.com/blog/customize-bootstrap/" title="How to Customize the Default Bootstrap Style, the Right Way" target="_self">
-            <img src="http://bootstrapbay.com/blog/wp-content/uploads/2014/06/custom-css-stylesheet-60x60.png" title="How to Customize the Default Bootstrap Style, the Right Way" alt="How to Customize the Default Bootstrap Style, the Right Way" width="60" height="60" class="wpp-thumbnail wpp_cached_thumb wpp_featured">
-          </a>
-          <a href="http://bootstrapbay.com/blog/customize-bootstrap/" title="How to Customize the Default Bootstrap Style, the Right Way" class="wpp-post-title" target="_self">How to Customize the Default Bootstrap Style, the Right Way</a>  
-          <span class="post-stats"></span> 
-        </li>
+        
       </ul>
     </aside>
     <!-- End of Fourth Aside -->

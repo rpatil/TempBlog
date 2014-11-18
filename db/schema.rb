@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141112071717) do
+ActiveRecord::Schema.define(:version => 20141118131017) do
 
   create_table "friendly_id_slugs", :force => true do |t|
     t.string   "slug",                         :null => false
@@ -30,6 +30,22 @@ ActiveRecord::Schema.define(:version => 20141112071717) do
     t.boolean  "status",       :default => true
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false
+  end
+
+  create_table "series", :force => true do |t|
+    t.string   "name",                                          :null => false
+    t.text     "short_description"
+    t.string   "tag",                                           :null => false
+    t.boolean  "status",                      :default => true
+    t.string   "series_picture_file_name"
+    t.string   "series_picture_content_type"
+    t.integer  "series_picture_file_size"
+    t.datetime "series_picture_updated_at"
+    t.integer  "vote_up",                     :default => 0,    :null => false
+    t.integer  "total_view",                  :default => 0,    :null => false
+    t.string   "slug"
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
   end
 
   create_table "tags", :force => true do |t|
@@ -68,16 +84,16 @@ ActiveRecord::Schema.define(:version => 20141112071717) do
   end
 
   create_table "tutorials", :force => true do |t|
-    t.string   "title",                                     :null => false
-    t.integer  "user_id",                                   :null => false
-    t.string   "mode",                                      :null => false
-    t.string   "time",                                      :null => false
-    t.string   "primary_category",                          :null => false
+    t.string   "title",                                        :null => false
+    t.integer  "user_id",                                      :null => false
+    t.string   "mode",                                         :null => false
+    t.string   "time",                                         :null => false
+    t.string   "primary_category",                             :null => false
     t.string   "categories"
-    t.string   "state",                                     :null => false
+    t.string   "state",                                        :null => false
     t.datetime "publish_date"
-    t.string   "tutorial_type",                             :null => false
-    t.text     "content_introduction",                      :null => false
+    t.string   "tutorial_type",                                :null => false
+    t.text     "content_introduction",                         :null => false
     t.text     "content_main"
     t.text     "conclusion"
     t.string   "github_link"
@@ -85,16 +101,22 @@ ActiveRecord::Schema.define(:version => 20141112071717) do
     t.string   "related_link"
     t.string   "attachment_link"
     t.string   "video_url"
-    t.integer  "vote_up",                    :default => 0, :null => false
-    t.integer  "total_view",                 :default => 0, :null => false
-    t.string   "slug",                                      :null => false
-    t.text     "content_short_introduction",                :null => false
-    t.datetime "updated_by_writer",                         :null => false
+    t.integer  "vote_up",                       :default => 0, :null => false
+    t.integer  "total_view",                    :default => 0, :null => false
+    t.string   "slug",                                         :null => false
+    t.integer  "series_id",                     :default => 0, :null => false
+    t.integer  "order",                         :default => 0, :null => false
+    t.text     "content_short_introduction",                   :null => false
+    t.datetime "updated_by_writer",                            :null => false
     t.integer  "reviewed_by"
     t.datetime "reviewed_date"
     t.text     "review_comment"
-    t.datetime "created_at",                                :null => false
-    t.datetime "updated_at",                                :null => false
+    t.string   "tutorial_picture_file_name"
+    t.string   "tutorial_picture_content_type"
+    t.integer  "tutorial_picture_file_size"
+    t.datetime "tutorial_picture_updated_at"
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
   end
 
   add_index "tutorials", ["slug"], :name => "index_tutorials_on_slug"
@@ -127,6 +149,7 @@ ActiveRecord::Schema.define(:version => 20141112071717) do
     t.string   "last_login_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.text     "short_introduction"
   end
 
 end

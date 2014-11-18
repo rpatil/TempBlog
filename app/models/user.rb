@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :follow_facebook, :follow_github, :follow_linkedin, :follow_stackoverflow, :follow_twitter, :introduction, :name, :status, :website, 
   								:crypted_password, :password_salt, :persistence_token, :single_access_token, :perishable_token,
 									:login_count, :failed_login_count, :last_request_at, :current_login_at, :last_login_at, :current_login_ip, :last_login_ip,
-                  :current_position, :company, :password, :password_confirmation, :skype_id
+                  :current_position, :company, :password, :password_confirmation, :skype_id, :short_introduction
 
   acts_as_authentic do |c|
     c.login_field = 'email'
