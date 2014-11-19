@@ -152,22 +152,33 @@
             </div>
           </li>
         </ul>
+
       </aside>
     <% end %>
     <!-- End of Writer Aside -->
 
     <!-- Trail Writer Aside -->
     <% if @tutorial_writer %>
-      <aside id="wpp-2" class="widget popular-posts" style="padding-bottom: 20px; min-height: 160px;">
-        <h3 class="widget-title margin-top-zero" style="margin-bottom: 10px;">About ## <%=@tutorial.user.name%> </h3>
+      <aside id="wpp-2" class="widget popular-posts" style="padding-bottom: 20px; min-height: 200px;">
+        <h3 class="widget-title margin-top-zero" style="margin-bottom: 5px;">About ## <%=@tutorial.user.name%> </h3>
         <ul class="wpp-list" style="font-size: 0.8em;">
           <li>
-            <p>
+            <p style="min-height: 105px; flex: 1 0 auto;">
               <a href="#" title="#" target="_self">
-              <img src="http://bootstrapbay.com/blog/wp-content/uploads/2014/05/SLR-camera1-60x60.jpg" title="#" alt="#" width="50" height="50" class="wpp-thumbnail wpp_cached_thumb wpp_featured">
-            </a>
-            <%=@tutorial.user.short_introduction %> 
+                <img src="http://bootstrapbay.com/blog/wp-content/uploads/2014/05/SLR-camera1-60x60.jpg" title="#" alt="#" width="50" height="50" class="wpp-thumbnail wpp_cached_thumb wpp_featured">
+              </a>
+              <%=@tutorial.user.short_introduction %>
             </p>
+            <div id="social-bar" class="text-center">
+              <a href="http://facebook.com" class="btn btn-social-icon btn-facebook">
+              <i class="fa fa-facebook"></i></a>                
+              <a class="btn btn-social-icon btn-dropbox"><i class="fa fa-dropbox"></i></a>
+              <a class="btn btn-social-icon btn-github"><i class="fa fa-github"></i></a>
+              <a class="btn btn-social-icon btn-google-plus"><i class="fa fa-google-plus"></i></a>
+              <a class="btn btn-social-icon btn-linkedin"><i class="fa fa-linkedin"></i></a>
+              <a class="btn btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></a>
+            </div>
+          
           </li>
         </ul>
       </aside>

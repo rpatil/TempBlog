@@ -10,15 +10,17 @@ class Tutorial < ActiveRecord::Base
 
   #belongs_to :primary_category, :foreign_key => "name"
 
-	def slug
-    title.strip.downcase.gsub(/[:,'"%^&*+=<>.`~]/,"").gsub("  ", " ").gsub(" ", "-")
-	end
+	#def slug
+#    title.strip.downcase.gsub(/[:,'"%^&*+=<>.`~]/,"").gsub("’","").gsub("  ", " ").gsub(" ", "-")
+ #   title.strip.downcase.gsub("  ", " ").gsub(" ", "-")
+ # end
 
 	def to_param
-	  "#{slug}".parameterize
+	  title.strip.downcase.parameterize
 	end
 
   extend FriendlyId
-  friendly_id :title, use: [ :slugged, :history ] 	
+  friendly_id :title, use: [ :slugged, :history ]   
+  #friendly_id :title, use: [ :slugged ]   
 
 end

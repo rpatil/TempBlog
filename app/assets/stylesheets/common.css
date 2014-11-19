@@ -2663,7 +2663,7 @@ margin-top: 5px;
 	/* color: #888; */
 }
 #secondary .widget a {
-	color: #008ed6;
+	/*color: #008ed6;*/
 }
 #secondary .widget a:hover, #secondary .widget a:focus {
   color: #005885;
@@ -2777,7 +2777,7 @@ transition: background-color 0.5s;
 	padding-bottom: 10px;
 }
 #secondary .widget a {
-	color: #008ed6;
+	/*color: #008ed6;*/
 }
 #secondary .widget_categories ul li:before {
 	content: '\f115';

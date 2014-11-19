@@ -10,7 +10,6 @@ class HomeController < ApplicationController
 
   def show_tutorial_using_slug
   	@tutorial = Tutorial.find_by_slug(params[:slug])
-  	byebug
 
   	@tutorial_writer = @tutorial.user.name.present? ? true : false
   	@tutorial_details = false
@@ -18,8 +17,7 @@ class HomeController < ApplicationController
 		if @tutorial.github_link.present? or 
 			@tutorial.demo_link.present? or 
 				@tutorial.related_link.present? or 
-					@tutorial.attachment_name.present? or 
-						@tutorial.video_url.present?
+					@tutorial.video_url.present?
 			@tutorial_details = true
 		end
 
