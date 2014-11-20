@@ -134,7 +134,7 @@
     <!-- Writer Aside -->
     <% if @tutorial_writer %>
       <aside id="wpp-2" class="widget popular-posts writer">
-        <h3 class="widget-title margin-top-zero">About ## <%=@tutorial.user.name%> </h3>
+        <h3 class="widget-title margin-top-zero">About <%=@tutorial.user.name%> </h3>
         <ul class="wpp-list">
           <li>
             <p class="writer_intro">
@@ -149,56 +149,30 @@
                 <a href="<%=@tutorial.user.follow_facebook %>" class="btn btn-social-icon btn-facebook"><i class="fa fa-facebook" target="_blank"></i></a>
               <% end %>                
               
-              <% if @tutorial.user.follow_facebook.present? %>
-                <a class="btn btn-social-icon btn-dropbox" target="_blank"><i class="fa fa-dropbox"></i></a>
+              <% if @tutorial.user.skype_id.present? %>              
+                <a href="<%=@tutorial.user.skype_id %>" class="btn btn-social-icon btn-dropbox" target="_blank"><i class="fa fa-skype"></i></a>
               <% end %>                
               
-              <% if @tutorial.user.follow_facebook.present? %>
-                <a class="btn btn-social-icon btn-github" target="_blank"><i class="fa fa-github"></i></a>
+              <% if @tutorial.user.follow_github.present? %>
+                <a href="<%=@tutorial.user.follow_github %>" class="btn btn-social-icon btn-github" target="_blank"><i class="fa fa-github"></i></a>
               <% end %>                
               
               <% if @tutorial.user.follow_facebook.present? %>
                 <a class="btn btn-social-icon btn-google-plus" target="_blank"><i class="fa fa-google-plus"></i></a>
               <% end %>                
               
-              <% if @tutorial.user.follow_facebook.present? %>
-                <a class="btn btn-social-icon btn-linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
+              <% if @tutorial.user.follow_linkedin.present? %>
+                <a href="<%=@tutorial.user.follow_linkedin %>" class="btn btn-social-icon btn-linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
               <% end %>                
               
-              
-              <a class="btn btn-social-icon btn-twitter" target="_blank"><i class="fa fa-twitter"></i></a>
-              <% end %>                
-              
+              <% if @tutorial.user.follow_twitter.present? %>
+                <a href="<%=@tutorial.user.follow_twitter %>" class="btn btn-social-icon btn-twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+              <% end %>    
 
-            </div>          
-
-
-
-
-
-
-t.string   "name",                                   :null => false
-    t.string   "email",                                  :null => false
-    t.text     "introduction",                           :null => false
-    t.string   "current_position"
-    t.string   "company"
-    t.string   "website"
-    t.string   "skype_id"
-    t.string   "follow_twitter"
-    t.string   "follow_linkedin"
-    t.string   "follow_facebook"
-    t.string   "follow_stackoverflow"
-    t.string   "follow_github"
-
-
-
-
-
-
-
-
-
-
+              <% if @tutorial.user.follow_stackoverflow.present? %>
+                <a href="<%=@tutorial.user.follow_stackoverflow %>" class="btn btn-social-icon btn-twitter" target="_blank"><i class="fa fa-stack-overflow"></i></a>
+              <% end %>       
+            </div>
           </li>
         </ul>
       </aside>

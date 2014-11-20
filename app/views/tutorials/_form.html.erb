@@ -126,7 +126,23 @@
       <div class="col-md-4 form-div">Video URL<br/>
         <%= f.text_field :video_url, :class => "col-md-12" %>
       </div>
-      <div class="col-md-8 form-div">Slug<br/>
+      <div class="col-md-8 form-div">Series<br/>
+        <% f.text_field :series_id, :class => "col-md-12" %>
+
+        <select class="form-control" name="tutorial[series_id]" id="tutorial_series_id">
+          <option value="0"> - Please select -</option>
+          <% @series.each do |series| %>
+            <option value="<%=series.id%>"  <% if series.id == @tutorial.series_id %>selected<% end %>  ><%=series.name%></option>
+          <% end %>
+        </select>
+        
+      </div>
+    </div>
+  <!-- End - Eight Div -->
+
+  <!-- Eight Div -->
+    <div class="row">
+      <div class="col-md-12 form-div">Slug<br/>
         <%= f.text_field :slug, :class => "col-md-12 readonly" %>
       </div>
     </div>

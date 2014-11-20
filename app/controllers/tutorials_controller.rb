@@ -26,6 +26,7 @@ class TutorialsController < ApplicationController
     @tutorial_type = TutorialType.all
     @primary_category = PrimaryCategory.all
     @tags = Tag.all
+    @series = Series.all
 
     respond_to do |format|
       format.html
@@ -40,6 +41,7 @@ class TutorialsController < ApplicationController
     @tutorial_type = TutorialType.all
     @primary_category = PrimaryCategory.all
     @tags = Tag.all
+    @series = Series.all
 
     @tutorial = Tutorial.find(params[:id])
   end

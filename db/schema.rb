@@ -151,5 +151,4 @@ ActiveRecord::Schema.define(:version => 20141118131017) do
     t.datetime "updated_at",                             :null => false
     t.text     "short_introduction"
   end
-
 end
