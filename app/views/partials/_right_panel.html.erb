@@ -80,21 +80,37 @@
       
       
       <!-- social icons -->
-      <div class="detail_title" title="Important Links" alt="Important Links" >Important Links:</div>
+      <div class="detail_title hide" title="Important Links" alt="Important Links" >Important Links:</div>
+
       <div class="social-icons sticky-sidebar-social">
         <div class="details-icon">
+          <p class="social-button">
 
-          <% if @tutorial.github_link.present? %>
-          <a href="<%=@tutorial.github_link %>" title="Visit Github - <%=@tutorial.github_link %>" class="facebook" target="_blank">
-            <i class="social_icon fa fa-github"></i> Visit Github
-          </a>
-          <% end %>
+            <% if @tutorial.github_link.present? %>
+              <a class="btn btn-social btn-dropbox btn-small" href="<%=@tutorial.github_link %>" target="_blank" title="Visit Github - <%=@tutorial.title %>"  alt="Visit Github - <%=@tutorial.title %>">
+                <i class="fa fa-github"></i> Github
+              </a>
+            <% end %>
 
-          <% if @tutorial.demo_link.present? %>
-          <a href="<%=@tutorial.demo_link %>" title="Demo Link - <%=@tutorial.demo_link %>" class="twitter" target="_blank">
-            <i class="social_icon fa fa-twitter"></i> Visit Demo
-          </a>
-          <% end %>
+            <% if @tutorial.demo_link.present? %>
+              <a class="btn btn-social btn-dropbox btn-small" href="<%=@tutorial.demo_link %>" target="_blank" title="View Demo - <%=@tutorial.title %>" alt="View Demo - <%=@tutorial.title %>">
+                <i class="fa fa-github"></i> Demo Link
+              </a>
+            <% end %>
+
+            <% if @tutorial.video_url.present? %>
+              <a class="btn btn-social btn-dropbox btn-small" href="<%=@tutorial.video_url %>" target="_blank" title="View Video - <%=@tutorial.title %>" alt="View Video - <%=@tutorial.title %>">
+                <i class="fa fa-file-video-o"></i> Video
+              </a>
+            <% end %>
+
+            <% if @tutorial.attachment_link.present? %>
+              <a class="btn btn-social btn-dropbox btn-small" href="<%=@tutorial.attachment_link %>" target="_blank" title="Download Attachment - <%=@tutorial.title %>" alt="Download Attachment - <%=@tutorial.title %>">
+                <i class="fa fa-download"></i> Download
+              </a>
+            <% end %>
+
+          <p>          
 
           <% if false and @tutorial.related_link.present? %>
           <a href="<%=@tutorial.related_link %>" title="Related Link - <%=@tutorial.related_link %>" class="googleplus" target="_blank">
@@ -102,88 +118,92 @@
           </a>
           <% end %>
 
-          <% if @tutorial.video_url.present? %>
-          <a href="<%=@tutorial.video_url %>" title="Video Link - <%=@tutorial.video_url %>" class="youtube" target="_blank">
-            <i class="social_icon fa fa-youtube"></i> Visit Video
-          </a>
-          <% end %>
-
-          <% if @tutorial.attachment_link.present? %>
-          <a href="<%=@tutorial.attachment_link %>" title="Attachment" class="rss" target="_blank">
-            <i class="social_icon fa fa-download"></i> Attachment
-          </a> 
-          <% end %>       
-
         </div>
+
       </div><!-- end social icons --> 
 
-      <p class="clearfix">
-        <a href="#">
-          <div class=" read-more like_button" href="#" title="#">
-            <div class="like_message pull-left">Do you like ?<br/> Click here </div>
-            <div class="like_icon pull-right"><i class="social_icon fa-thumbs-o-up"></i></div>
-          </div>
+      <p class="social-button">
+        <a class="btn btn-social btn-dropbox btn-lg">
+          <i class="fa fa-thumbs-o-up"></i> Do you Like, Click here
         </a>
       </p>
-
     </aside>
     <!-- End of Tutorial Details -->
     <% end %>
 
     <!-- Writer Aside -->
-    <% if @tutorial_writer and false%>
-      <aside id="wpp-2" class="widget popular-posts" style="padding-bottom: 20px;">
-        <h3 class="widget-title margin-top-zero" style="margin-bottom: 10px;">About <%=@tutorial.user.name%> </h3>
+    <% if @tutorial_writer %>
+      <aside id="wpp-2" class="widget popular-posts writer">
+        <h3 class="widget-title margin-top-zero">About ## <%=@tutorial.user.name%> </h3>
         <ul class="wpp-list">
           <li>
-            <a href="#" title="#" target="_self">
-              <img src="http://bootstrapbay.com/blog/wp-content/uploads/2014/05/SLR-camera1-60x60.jpg" title="#" alt="#" width="105" height="105" class="wpp-thumbnail wpp_cached_thumb wpp_featured">
-            </a>
-            <div class="writer_details">
-              <% if false %>
-              <a href="#" title="#" class="wpp-post-title wpp-blog-title" target="_self">
-                <%=@tutorial.user.name%>
-              </a>
-              <% end %>
-              <span class="post-stats"><%=@tutorial.user.name%>, </span>
-              <span class="post-stats">Cybage Software Pvt Ltd, Pune</span>
-              <span class="post-stats"><%=@tutorial.user.email%></span>
-              <span class="label label-info btn_profile_info">Profile Info</span>
-            </div>
-          </li>
-        </ul>
-
-      </aside>
-    <% end %>
-    <!-- End of Writer Aside -->
-
-    <!-- Trail Writer Aside -->
-    <% if @tutorial_writer %>
-      <aside id="wpp-2" class="widget popular-posts" style="padding-bottom: 20px; min-height: 200px;">
-        <h3 class="widget-title margin-top-zero" style="margin-bottom: 5px;">About ## <%=@tutorial.user.name%> </h3>
-        <ul class="wpp-list" style="font-size: 0.8em;">
-          <li>
-            <p style="min-height: 105px; flex: 1 0 auto;">
+            <p class="writer_intro">
               <a href="#" title="#" target="_self">
                 <img src="http://bootstrapbay.com/blog/wp-content/uploads/2014/05/SLR-camera1-60x60.jpg" title="#" alt="#" width="50" height="50" class="wpp-thumbnail wpp_cached_thumb wpp_featured">
               </a>
               <%=@tutorial.user.short_introduction %>
             </p>
             <div id="social-bar" class="text-center">
-              <a href="http://facebook.com" class="btn btn-social-icon btn-facebook">
-              <i class="fa fa-facebook"></i></a>                
-              <a class="btn btn-social-icon btn-dropbox"><i class="fa fa-dropbox"></i></a>
-              <a class="btn btn-social-icon btn-github"><i class="fa fa-github"></i></a>
-              <a class="btn btn-social-icon btn-google-plus"><i class="fa fa-google-plus"></i></a>
-              <a class="btn btn-social-icon btn-linkedin"><i class="fa fa-linkedin"></i></a>
-              <a class="btn btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></a>
-            </div>
-          
+              
+              <% if @tutorial.user.follow_facebook.present? %>
+                <a href="<%=@tutorial.user.follow_facebook %>" class="btn btn-social-icon btn-facebook"><i class="fa fa-facebook" target="_blank"></i></a>
+              <% end %>                
+              
+              <% if @tutorial.user.follow_facebook.present? %>
+                <a class="btn btn-social-icon btn-dropbox" target="_blank"><i class="fa fa-dropbox"></i></a>
+              <% end %>                
+              
+              <% if @tutorial.user.follow_facebook.present? %>
+                <a class="btn btn-social-icon btn-github" target="_blank"><i class="fa fa-github"></i></a>
+              <% end %>                
+              
+              <% if @tutorial.user.follow_facebook.present? %>
+                <a class="btn btn-social-icon btn-google-plus" target="_blank"><i class="fa fa-google-plus"></i></a>
+              <% end %>                
+              
+              <% if @tutorial.user.follow_facebook.present? %>
+                <a class="btn btn-social-icon btn-linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
+              <% end %>                
+              
+              
+              <a class="btn btn-social-icon btn-twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+              <% end %>                
+              
+
+            </div>          
+
+
+
+
+
+
+t.string   "name",                                   :null => false
+    t.string   "email",                                  :null => false
+    t.text     "introduction",                           :null => false
+    t.string   "current_position"
+    t.string   "company"
+    t.string   "website"
+    t.string   "skype_id"
+    t.string   "follow_twitter"
+    t.string   "follow_linkedin"
+    t.string   "follow_facebook"
+    t.string   "follow_stackoverflow"
+    t.string   "follow_github"
+
+
+
+
+
+
+
+
+
+
           </li>
         </ul>
       </aside>
     <% end %>
-    <!-- End of Trail Writer Aside -->
+    <!-- End of Writer Aside -->
     
     <!-- Fourth Aside -->
     <aside id="wpp-2" class="widget popular-posts">
