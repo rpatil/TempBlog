@@ -105,7 +105,7 @@ ActiveRecord::Schema.define(:version => 20141118131017) do
     t.integer  "total_view",                    :default => 0, :null => false
     t.string   "slug",                                         :null => false
     t.integer  "series_id",                     :default => 0, :null => false
-    t.integer  "order",                         :default => 0, :null => false
+    t.integer  "tutorial_order",                :default => 0, :null => false
     t.text     "content_short_introduction",                   :null => false
     t.datetime "updated_by_writer",                            :null => false
     t.integer  "reviewed_by"
@@ -151,4 +151,5 @@ ActiveRecord::Schema.define(:version => 20141118131017) do
     t.datetime "updated_at",                             :null => false
     t.text     "short_introduction"
   end
+
 end

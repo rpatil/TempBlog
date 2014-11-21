@@ -141,18 +141,29 @@
   <!-- End - Eight Div -->
 
   <!-- Eight Div -->
+<!--
     <div class="row">
       <div class="col-md-12 form-div">Slug<br/>
         <%= f.text_field :slug, :class => "col-md-12 readonly" %>
       </div>
     </div>
+-->    
   <!-- End - Eight Div -->
 
   <!-- Ninth Div -->
     <div class="row">
+      <div class="col-md-4 form-div">
+        Order<br/>
+        <%= f.number_field :tutorial_order, :class => "col-md-12" %>
+      </div>
       <div class="col-md-4 form-div"></div>
-      <div class="col-md-4 form-div"></div>
-      <div class="col-md-4 form-div"><%= f.submit %></div>
+      <div class="col-md-4 form-div"><br/>
+        <% if controller.action_name == "edit"%>
+          <input type="submit" value="Update" name="commit" class="btn btn-primary btn-sm">
+        <% else %>
+          <input type="submit" value="Create" name="commit" class="btn btn-primary btn-sm">
+        <% end %>
+      </div>
     </div>
   <!-- End - Ninth Div -->
 <% end %>

@@ -1,60 +1,70 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @series.name %>
-</p>
 
-<p>
-  <b>Short description:</b>
-  <%= @series.short_description %>
-</p>
+<div class="row">
+  <div class="col-md-8">
+    <b>Series Name</b><br/>
+    <%= @series.name %>
+  </div>
+  <div class="col-md-4">
+    <b>Status</b><br />
+    <%= @series.status %>
+  </div>
+</div>
 
-<p>
-  <b>Tag:</b>
-  <%= @series.tag %>
-</p>
+<div class="row">
+  <div class="col-md-12">
+    <b>Short Description</b><br/>
+    <%= @series.short_description %>
+  </div>
+</div> 
 
-<p>
-  <b>Status:</b>
-  <%= @series.status %>
-</p>
+<div class="row">
+  <div class="col-md-12">
+    <b>Tag</b><br/>
+    <%= @series.tag %>
+  </div>
+</div>  
+<!--
+<div class="row">
+  <div class="col-md-12">
+    <b>slug</b><br/>
+    <%= @series.slug %>
+  </div>
+</div>  
+-->
+<div class="row">
+  <div class="col-md-4">
+    <b>Vote Up</b><br/>
+    <%= @series.vote_up %>
+  </div>
+  <div class="col-md-4">
+    <b>Total View</b><br />
+    <%= @series.total_view %>
+  </div>
+  <div class="col-md-4">
+    <br/>
+    <%= link_to 'Edit', edit_series_path(@series) %> | <%= link_to 'Back', series_index_path %>
+  </div>
+</div>
+<hr/>
 
-<p>
-  <b>Series picture file name:</b>
-  <%= @series.series_picture_file_name %>
-</p>
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+    <b><%= @series.name %></b>    
+  </div>
 
-<p>
-  <b>Series picture content type:</b>
-  <%= @series.series_picture_content_type %>
-</p>
+  <!-- List group -->
+  <% #@tutorial = Tutorial.where("series_id = ?", @series.id ).order("series.order") %>
+  <ul class="list-group">
+    <% if !@tutorial.present? %>
+      <li class="list-group-item"> No Such Tutorial is present</li>
+    <% end %>
 
-<p>
-  <b>Series picture file size:</b>
-  <%= @series.series_picture_file_size %>
-</p>
+    <% @tutorial.each do |tutorial_list| %>
+      <li class="list-group-item"><%=tutorial_list.tutorial_order %> :: <%=tutorial_list.title%></li>
+    <% end %>
 
-<p>
-  <b>Series picture updated at:</b>
-  <%= @series.series_picture_updated_at %>
-</p>
-
-<p>
-  <b>Vote up:</b>
-  <%= @series.vote_up %>
-</p>
-
-<p>
-  <b>Total view:</b>
-  <%= @series.total_view %>
-</p>
-
-<p>
-  <b>Slug:</b>
-  <%= @series.slug %>
-</p>
-
-
-<%= link_to 'Edit', edit_series_path(@series) %> |
-<%= link_to 'Back', series_index_path %>
+  </ul>
+</div>

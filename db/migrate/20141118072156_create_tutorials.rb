@@ -23,7 +23,7 @@ class CreateTutorials < ActiveRecord::Migration
       t.string :slug,                 :null => false
 
       t.integer :series_id,           :null => false, :default => 0
-      t.integer :order,               :null => false, :default => 0
+      t.integer :tutorial_order,      :null => false, :default => 0
 
       t.text :content_short_introduction,  :null => false
       t.datetime :updated_by_writer,  :null => false

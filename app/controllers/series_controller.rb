@@ -12,6 +12,10 @@ class SeriesController < ApplicationController
   def show
     @series = Series.find(params[:id])
 
+    #Status.where(:status => params[:cat_id]).order("created_at DESC")
+    @tutorial = Tutorial.where(:series_id => @series.id ).order("order ASC")
+
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @series }
