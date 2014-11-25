@@ -354,7 +354,9 @@ h3.widget-title {
 
 /* Writer Widget */
 .writer{
-  padding-bottom: 20px; min-height: 200px;
+  /*padding-bottom: 20px;*/ 
+  min-height: 200px;
+  padding-bottom: 0px;
 }
 .writer h3{
   margin-bottom: 5px;
@@ -364,4 +366,16 @@ h3.widget-title {
 }
 .writer .writer_intro{
   min-height: 105px; flex: 1 0 auto;
+}
+.writer ul{
+  margin-bottom: 0px !important;
+}
+.writer ul.wpp-list li {
+    border-bottom: medium none;
+    clear: left;
+    float: none;
+    height: auto !important;
+    list-style: none outside none;
+    margin-bottom: 5px;
+    padding: 0;
 }

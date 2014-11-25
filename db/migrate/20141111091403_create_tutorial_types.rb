@@ -6,8 +6,5 @@ class CreateTutorialTypes < ActiveRecord::Migration
 
       t.timestamps
     end
-
-    TutorialType.create(name: "Free")
-    TutorialType.create(name: "Paid")
   end
 end

@@ -5,12 +5,6 @@ class CreateTutorialStates < ActiveRecord::Migration
       t.boolean :status,	:default => true
 
       t.timestamps
-    end
-
-    TutorialState.create(name: "Draft")
-    TutorialState.create(name: "Hide")
-    TutorialState.create(name: "Publish")    
-    TutorialState.create(name: "Discard")    
-    
+    end    
   end
 end

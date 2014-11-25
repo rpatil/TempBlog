@@ -32,10 +32,5 @@ class CreateUsers < ActiveRecord::Migration
       t.timestamps
     end
 
-    User.create(name: "Rahul P", email: "rahul@mailinator.com", introduction: "Blog Writer", current_position: "Soft Eng", company: "Cybage Software, Pune" ,password: "12345", password_confirmation: "12345" )
-    User.create(name: "Sandy", email: "sandy@mailinator.com", introduction: "Blog Writer", current_position: "Recruitment Head", company: "RiseMart, Pune", password: "12345", password_confirmation: "12345" )
-    User.create(name: "Deva", email: "deva@mailinator.com", introduction: "Blog Writer", current_position: "Soft Eng", company: "Capgemini Software, Pune", password: "12345", password_confirmation: "12345" )
-    User.create(name: "Santosh", email: "santosh@mailinator.com", introduction: "Blog Writer", current_position: "Testing Engineer", company: "Clear Point, Pune", password: "12345", password_confirmation: "12345" )
-    User.create(name: "Chanchu", email: "chanchu@mailinator.com", introduction: "Blog Writer", current_position: "Soft Eng", company: "Cybage Software. Pune", password: "12345", password_confirmation: "12345" )
   end
 end

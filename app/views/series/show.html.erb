@@ -58,11 +58,11 @@
   <!-- List group -->
   <% #@tutorial = Tutorial.where("series_id = ?", @series.id ).order("series.order") %>
   <ul class="list-group">
-    <% if !@tutorial.present? %>
+    <% if !@tutorial_specific_to_series.present? %>
       <li class="list-group-item"> No Such Tutorial is present</li>
     <% end %>
 
-    <% @tutorial.each do |tutorial_list| %>
+    <% @tutorial_specific_to_series.each do |tutorial_list| %>
       <li class="list-group-item"><%=tutorial_list.tutorial_order %> :: <%=tutorial_list.title%></li>
     <% end %>
 

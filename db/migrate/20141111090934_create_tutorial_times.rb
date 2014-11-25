@@ -7,8 +7,5 @@ class CreateTutorialTimes < ActiveRecord::Migration
       t.timestamps
     end
 
-    TutorialTime.create(name: "Short")
-		TutorialTime.create(name: "Medium")
-    TutorialTime.create(name: "Long")
   end
 end

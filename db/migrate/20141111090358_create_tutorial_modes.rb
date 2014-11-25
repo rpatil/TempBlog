@@ -6,9 +6,5 @@ class CreateTutorialModes < ActiveRecord::Migration
 
       t.timestamps
     end
-
-    TutorialMode.create(name: "Beginner")
-    TutorialMode.create(name: "Intermediate")
-    TutorialMode.create(name: "Expert")
   end
 end
