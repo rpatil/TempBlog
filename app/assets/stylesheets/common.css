@@ -2590,11 +2590,11 @@ h1, h2, h3, h4, h5 {
 .margin-top-zero{
   margin-top: 0px !important;
 }
-
+/*
 h1, .h1 {
 	font-size: 22px  !important;
 }
-
+*/
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	/*color: #DA4453  !important;*/
 	font-weight: 700  !important;
